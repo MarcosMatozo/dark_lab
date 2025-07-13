@@ -65,24 +65,7 @@
                                     {% if section.settings.menu_type_desktop == 'mega' and section.settings.collection_featured_image == true %}
                                       {%- if childlink.url contains '/collections/' -%}
                                         {% assign card_collection = collections[childlink.object.handle] %}
-                                        {%- if card_collection.featured_image != blank -%}
-                                          <span class="drawer-collection-megamenu-image media">
-                                            <img
-                                              srcset="
-                                                {%- if card_collection.featured_image.width >= 60 -%}{{ card_collection.featured_image | image_url: width: 60 }} 60w,{%- endif -%}
-                                                {%- if card_collection.featured_image.width >= 80 -%}{{ card_collection.featured_image | image_url: width: 80 }} 80w,{%- endif -%}
-                                                {%- if card_collection.featured_image.width >= 100 -%}{{ card_collection.featured_image | image_url: width: 100 }} 100w,{%- endif -%}
-                                                {{ card_collection.featured_image | image_url }} {{ card_collection.featured_image.width }}w
-                                              "
-                                              src="{{ card_collection.featured_image | image_url: width: 80 }}"
-                                              alt=""
-                                              height="60"
-                                              width="80"
-                                              loading="lazy"
-                                              class="motion-reduce"
-                                            >
-                                          </span>
-                                        {%- endif -%}
+                                        
                                       {%- endif -%}
                                     {% endif %}
                                     {{ childlink.title | escape }}
@@ -96,27 +79,7 @@
                                       {% if section.settings.menu_type_desktop == 'mega' and section.settings.collection_featured_image == true %}
                                         {%- if childlink.levels > 0 and childlink.url contains '/collections/' -%}
                                           {% assign card_collection = collections[childlink.object.handle] %}
-                                          {%- if card_collection.featured_image != blank -%}
-                                            <a
-                                              href="{{ childlink.url }}"
-                                              class="drawer-collection-megamenu-image media"
-                                            >
-                                              <img
-                                                srcset="
-                                                  {%- if card_collection.featured_image.width >= 60 -%}{{ card_collection.featured_image | image_url: width: 60 }} 60w,{%- endif -%}
-                                                  {%- if card_collection.featured_image.width >= 80 -%}{{ card_collection.featured_image | image_url: width: 80 }} 80w,{%- endif -%}
-                                                  {%- if card_collection.featured_image.width >= 100 -%}{{ card_collection.featured_image | image_url: width: 100 }} 100w,{%- endif -%}
-                                                  {{ card_collection.featured_image | image_url }} {{ card_collection.featured_image.width }}w
-                                                "
-                                                src="{{ card_collection.featured_image | image_url: width: 80 }}"
-                                                alt=""
-                                                height="60"
-                                                width="80"
-                                                loading="lazy"
-                                                class="motion-reduce"
-                                              >
-                                            </a>
-                                          {%- endif -%}
+
                                         {%- endif -%}
                                       {% endif %}
                                       {{ childlink.title | escape }}

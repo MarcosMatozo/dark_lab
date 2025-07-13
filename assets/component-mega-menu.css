@@ -37,6 +37,8 @@
 .mega-menu[open] .mega-menu__content {
   opacity: 1;
   transform: translateY(0);
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .mega-menu__list {
@@ -60,7 +62,13 @@
 }
 
 .mega-menu__link--level-2 {
-  font-weight: bold;
+  font-weight: lighter;
+}
+.mega-menu__link--level-2 h5{
+  font-size: 1.4rem;
+  text-transform: none;
+  font-family: var(--font-body-family);
+
 }
 
 .header--top-center .mega-menu__list {

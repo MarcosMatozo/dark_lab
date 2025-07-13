@@ -46,40 +46,7 @@
                         style="--animation-order: {{ forloop.index }};"
                       {% endif %}
                     >
-                      {% if collection_image == true %}
-                        {%- if childlink.url contains '/collections/' -%}
-                          {% assign card_collection = collections[childlink.object.handle] %}
-                          {%- if card_collection.featured_image != blank -%}
-                            <a
-                              href="{{ childlink.url }}"
-                              class="collection-megamenu-image global-media-settings media"
-                            >
-                              <img
-                                srcset="
-                                  {%- if card_collection.featured_image.width >= 500 -%}{{ card_collection.featured_image | image_url: width: 500 }} 500w,{%- endif -%}
-                                  {%- if card_collection.featured_image.width >= 535 -%}{{ card_collection.featured_image | image_url: width: 535 }} 535w,{%- endif -%}
-                                  {%- if card_collection.featured_image.width >= 750 -%}{{ card_collection.featured_image | image_url: width: 750 }} 750w,{%- endif -%}
-                                  {%- if card_collection.featured_image.width >= 1000 -%}{{ card_collection.featured_image | image_url: width: 1000 }} 1000w,{%- endif -%}
-                                  {%- if card_collection.featured_image.width >= 1500 -%}{{ card_collection.featured_image | image_url: width: 1500 }} 1500w,{%- endif -%}
-                                  {%- if card_collection.featured_image.width >= 3000 -%}{{ card_collection.featured_image | image_url: width: 3000 }} 3000w,{%- endif -%}
-                                  {{ card_collection.featured_image | image_url }} {{ card_collection.featured_image.width }}w
-                                "
-                                src="{{ card_collection.featured_image | image_url: width: 1500 }}"
-                                sizes="
-                                  (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: link.links.size }}px,
-                                  (min-width: 750px) {% if link.links.size > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
-                                  calc(100vw - 3rem)
-                                "
-                                alt=""
-                                height="{{ card_collection.featured_image.height }}"
-                                width="{{ card_collection.featured_image.width }}"
-                                loading="lazy"
-                                class="motion-reduce"
-                              >
-                            </a>
-                          {%- endif -%}
-                        {%- endif -%}
-                      {% endif %}
+                      
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                         href="{{ childlink.url }}"
