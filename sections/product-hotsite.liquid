@@ -1,18 +1,31 @@
 {{ 'product_hotsite.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
-    <div class="product-hotsite">
-        {% for block in section.blocks %}
-            {% if block.type == 'product_hotsite_banner' %}
-                <div class="product-hotsite-banner">
-                    <div class="product-hotsite-banner__image">
-                        {{ block.settings.hotsite_banner_image | image_url: width: "1216" | image_tag }}
+
+<div class="product-hotsite-banners-bg" style="background-image: url({{ section.settings.hotsite_banner_image_bg | image_url: width: section.settings.hotsite_banner_image_bg.width }}); background-position: 0 0; background-repeat: no-repeat; background-size: auto">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'product_hotsite_banner' %}
+          <div class="page-width">
+            <div class="product-hotsite">
+                {% if block.type == 'product_hotsite_banner' %}
+                    <div class="product-hotsite-banner">
+                        <div class="product-hotsite-banner__image desktop-only">
+                            {{ block.settings.hotsite_banner_image | image_url: width: "1216" | image_tag }}
+                        </div>
+                        <div class="product-hotsite-banner__image mobile-only">
+                            {{ block.settings.hotsite_banner_image_mb | image_url: width: "960" | image_tag }}
+                        </div>
                     </div>
-                </div>
-            {%- endif -%}
-        {% endfor %}
-    </div>
+                {%- endif -%}
+              </div>
+      </div>
+      
+    {% endcase %}
+    
+  {% endfor %}
 </div>
+
+
 
 {% schema %}
 {
@@ -20,17 +33,47 @@
   "tag": "section",
   "class": "product-hotsite",
   "settings": [
-    
+    {
+      "type": "image_picker",
+      "id": "hotsite_banner_image_bg",
+      "label": "Background nos banners"
+    },
+    {
+      "type": "image_picker",
+      "id": "hotsite_banner_image_bg_charac",
+      "label": "Background nos banners de características"
+    }
   ],
   "blocks": [
     {
       "type": "product_hotsite_banner",
-      "name": "Banner do Hotsite",
+      "name": "Banner do Hotsites",
       "settings": [
         {
           "type": "image_picker",
           "id": "hotsite_banner_image",
-          "label": "Ícone"
+          "label": "Banner Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "hotsite_banner_image_mb",
+          "label": "Banner Mobile"
+        }
+      ]
+    },
+    {
+      "type": "banner_charac",
+      "name": "Carac. do Hotsite",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "hotsite_banner_image_charac",
+          "label": "Banner Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "hotsite_banner_image_charac_mb",
+          "label": "Banner Mobile"
         }
       ]
     }

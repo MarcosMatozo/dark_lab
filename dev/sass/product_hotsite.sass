@@ -2,6 +2,24 @@
     display: block
     margin: auto
     .product-hotsite-banner
-        @media screen and (min-width: 960px)
+        img
+            margin: 0 auto 7rem
+            display: block
+            max-width: 100%
+            height: auto
+        @media screen and (min-width: 961px)
+            &:last-child
+                padding-bottom: 7px
             img
-                margin-bottom: 7rem
+                margin: 0 auto 7rem
+
+            .product-hotsite-banner__image.mobile-only
+                display: none
+        @media screen and (max-width: 960px)
+            &:last-child
+                padding-bottom: 7px
+            img
+                margin: 0 auto 7rem
+            
+            .product-hotsite-banner__image.desktop-only
+                display: none
