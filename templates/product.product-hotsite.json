@@ -128,22 +128,55 @@
         "product_hotsite_banner_nGKtJh": {
           "type": "product_hotsite_banner",
           "settings": {
-            "hotsite_banner_image": "shopify://shop_images/first-line_c34b467e-ed11-4a4f-972f-da94900dd298.jpg"
+            "hotsite_banner_image": "shopify://shop_images/b1.png",
+            "hotsite_banner_image_mb": "shopify://shop_images/first-line.png"
           }
         },
         "product_hotsite_banner_jfqikV": {
           "type": "product_hotsite_banner",
           "settings": {
-            "hotsite_banner_image": "shopify://shop_images/first-line_1.jpg"
+            "hotsite_banner_image": "shopify://shop_images/b2.png",
+            "hotsite_banner_image_mb": "shopify://shop_images/first-line_1.png"
           }
+        },
+        "product_hotsite_banner_XNeNVn": {
+          "type": "product_hotsite_banner",
+          "settings": {
+            "hotsite_banner_image": "shopify://shop_images/b3.png",
+            "hotsite_banner_image_mb": "shopify://shop_images/first-line_2_fcc6a623-6d30-4716-9e55-c757ab53392c.png"
+          }
+        },
+        "banner_charac_qKikMF": {
+          "type": "banner_charac",
+          "settings": {
+            "hotsite_banner_image_charac": "shopify://shop_images/first-line_3.png"
+          }
+        },
+        "banner_charac_C7qMQh": {
+          "type": "banner_charac",
+          "settings": {
+            "hotsite_banner_image_charac": "shopify://shop_images/Frame_2082.png",
+            "hotsite_banner_image_charac_mb": "shopify://shop_images/Frame_2082.png"
+          }
+        },
+        "banner_charac_bDbHkx": {
+          "type": "banner_charac",
+          "settings": {}
         }
       },
       "block_order": [
         "product_hotsite_banner_nGKtJh",
-        "product_hotsite_banner_jfqikV"
+        "product_hotsite_banner_jfqikV",
+        "product_hotsite_banner_XNeNVn",
+        "banner_charac_qKikMF",
+        "banner_charac_C7qMQh",
+        "banner_charac_bDbHkx"
       ],
       "name": "Product Hotsite Banners",
-      "settings": {}
+      "settings": {
+        "hotsite_banner_image_bg": "shopify://shop_images/bg-prod-hot-banners_cdfced92-165c-46b9-9179-d399061afc81.png",
+        "hotsite_banner_image_bg_charac": "shopify://shop_images/bg_charac.png"
+      }
     },
     "related-products": {
       "type": "related-products",
