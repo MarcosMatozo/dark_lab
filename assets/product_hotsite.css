@@ -1,0 +1,9 @@
+.product-hotsite {
+  display: block;
+  margin: auto;
+}
+@media screen and (min-width: 960px) {
+  .product-hotsite .product-hotsite-banner img {
+    margin-bottom: 7rem;
+  }
+}

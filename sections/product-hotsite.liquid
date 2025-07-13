@@ -1,13 +1,17 @@
-<div>
-    {% for block in section.blocks %}
-        {% if block.type == 'product_hotsite_banner' %}
-            <div class="product-hotsite-banner">
-                <div class="product-hotsite-banner__image">
-                    {{ block.settings.hotsite_banner_image | image_url: width: 1000 }}
+{{ 'product_hotsite.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width">
+    <div class="product-hotsite">
+        {% for block in section.blocks %}
+            {% if block.type == 'product_hotsite_banner' %}
+                <div class="product-hotsite-banner">
+                    <div class="product-hotsite-banner__image">
+                        {{ block.settings.hotsite_banner_image | image_url: width: "1216" | image_tag }}
+                    </div>
                 </div>
-            </div>
-        {%- endif -%}
-    {% endfor %}
+            {%- endif -%}
+        {% endfor %}
+    </div>
 </div>
 
 {% schema %}

@@ -1,0 +1,32 @@
+.slider-button.arrow-with-dots {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  width: 72px !important;
+  height: 72px !important;
+}
+.slider-button--prev {
+  left: 0;
+}
+.slider-button--next {
+  right: 0;
+}
+.slider-button svg {
+  width: 72px;
+  height: 72px;
+}
+@media screen and (max-width: 768px) {
+  .slider-button.arrow-with-dots {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  .slider-button.arrow-with-dots svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+slideshow-component .slideshow__controls {
+  display: none !important;
+}
