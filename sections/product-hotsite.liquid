@@ -1,0 +1,40 @@
+<div>
+    {% for block in section.blocks %}
+        {% if block.type == 'product_hotsite_banner' %}
+            <div class="product-hotsite-banner">
+                <div class="product-hotsite-banner__image">
+                    {{ block.settings.hotsite_banner_image | image_url: width: 1000 }}
+                </div>
+            </div>
+        {%- endif -%}
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Hotsite Banners",
+  "tag": "section",
+  "class": "product-hotsite",
+  "settings": [
+    
+  ],
+  "blocks": [
+    {
+      "type": "product_hotsite_banner",
+      "name": "Banner do Hotsite",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "hotsite_banner_image",
+          "label": "Ícone"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Hotsite Banners"
+    }
+  ]
+}
+{% endschema %}

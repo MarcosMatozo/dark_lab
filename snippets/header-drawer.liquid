@@ -76,12 +76,7 @@
                                       id="HeaderDrawer-{{ link.handle }}-{{ childlink.handle }}"
                                       class="menu-drawer__menu-item link link--text list-menu__item focus-inset"
                                     >
-                                      {% if section.settings.menu_type_desktop == 'mega' and section.settings.collection_featured_image == true %}
-                                        {%- if childlink.levels > 0 and childlink.url contains '/collections/' -%}
-                                          {% assign card_collection = collections[childlink.object.handle] %}
 
-                                        {%- endif -%}
-                                      {% endif %}
                                       {{ childlink.title | escape }}
                                       {% render 'theme-icons', icon: 'top-arrow' %}
                                     </summary>
