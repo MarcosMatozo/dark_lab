@@ -26,11 +26,13 @@
 </div>
 
 
+<div style="background-image: url({{ section.settings.hotsite_banner_image_bg_charac2 | image_url: width: section.settings.hotsite_banner_image_bg_charac2.width }}); background-position: 0 bottom; background-repeat: no-repeat; background-size: 100%; padding-bottom: 18rem;">
 <div class="product-hotsite-banners-bg charac" style="background-image: url({{ section.settings.hotsite_banner_image_bg_charac | image_url: width: section.settings.hotsite_banner_image_bg_charac.width }}); background-position: 0 0; background-repeat: no-repeat; background-size: 100%; margin-top: 7rem">
+            <div class="product-hotsite">
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'banner_charac' %}
-          <div class="page-width">
+          <div class="page-width" style="">
             <div class="product-hotsite">
                 {% if block.type == 'banner_charac' %}
                     <div class="product-hotsite-banner">
@@ -48,6 +50,7 @@
     {% endcase %}
     
   {% endfor %}
+  </div>
 </div>
 
 
@@ -66,7 +69,12 @@
     {
       "type": "image_picker",
       "id": "hotsite_banner_image_bg_charac",
-      "label": "Background nos banners de características"
+      "label": "Background nos banners de características - Topo"
+    },
+    {
+      "type": "image_picker",
+      "id": "hotsite_banner_image_bg_charac2",
+      "label": "Background nos banners de características - Base"
     }
   ],
   "blocks": [

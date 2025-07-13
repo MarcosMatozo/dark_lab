@@ -30,3 +30,6 @@
     display: none;
   }
 }
+.product-hotsite .product-hotsite-banners-bg.charac .page-width:last-child img {
+  margin-bottom: 0;
+}
