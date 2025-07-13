@@ -19,15 +19,31 @@
         "content": "<p><strong>Make an Announcement Here! 📣</strong></p>"
       }
     },
-    "custom_liquid_MAVmPn": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "top_bar_iUznr7": {
+      "type": "top-bar",
+      "blocks": {
+        "text_item_6899mJ": {
+          "type": "text_item",
+          "settings": {
+            "icon_text": "shopify://shop_images/Delivery.svg",
+            "content": "<p>Frete grátis centro Oeste em compras acima de <strong>R$250</strong></p>"
+          }
+        },
+        "text_item_6JwU7f": {
+          "type": "text_item",
+          "settings": {
+            "icon_text": "shopify://shop_images/Logo-icon.svg",
+            "content": "<p>Navegue pela nossa loja para conhecer nossos produtos.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_item_6899mJ",
+        "text_item_6JwU7f"
+      ],
+      "name": "Lista de Informações",
       "settings": {
-        "page_width": false,
-        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <title>Fix Mobile Text Alignment</title>\n  <style>\n    .container-produced {\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      gap: 0px;\n      padding: 10px 12px;\n      background-color: #ED1C24;\n    }\n\n    .icon-produced {\n      width: 30px;\n      height: 20px;\n      flex-shrink: 0;\n      display: flex;\n      align-items: center;\n      justify-content: center;\n    }\n\n    .icon-produced svg {\n      width: 25px;\n      height: 24px;\n      display: block;\n    }\n\n    .text-produced {\n      font-size: 12px;\n      color: #FFF;\n      white-space: nowrap; /* força tudo na mesma linha */\n      display: flex;\n      align-items: center;\n      gap: 5px;\n    }\n\n    .highlight-bg {\n      background-color: #181616;\n      color: #fff;\n      padding: 2px 6px;\n      border-radius: 1px;\n      font-weight: bold;\n    }\n\n    @media only screen and (min-width: 768px) {\n      .text-produced {\n        font-size: 14px;\n      }\n    }\n  </style>\n</head>\n<body>\n\n  <div class=\"container-produced\">\n    <div class=\"icon-produced\">\n      <svg width=\"25\" height=\"24\" viewBox=\"0 0 25 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n        <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M5.3 6.30002C5.3 5.80297 5.70294 5.40002 6.2 5.40002H14.5897C16.0631 5.40002 17.3579 6.37675 17.7627 7.79344L18.275 9.58637C18.3044 9.68945 18.3867 9.76899 18.4907 9.79499L20.5093 10.2997C21.4442 10.5334 22.1 11.3733 22.1 12.337V13.8C22.1 14.653 21.5915 15.3871 20.8611 15.7159C20.8867 15.8735 20.9 16.0352 20.9 16.2C20.9 17.8569 19.5569 19.2 17.9 19.2C16.2431 19.2 14.9 17.8569 14.9 16.2C14.9 16.0988 14.905 15.9987 14.9148 15.9H11.2852C11.295 15.9987 11.3 16.0988 11.3 16.2C11.3 17.8569 9.95685 19.2 8.3 19.2C6.64315 19.2 5.3 17.8569 5.3 16.2C5.3 15.7734 5.38907 15.3675 5.54963 15H5C4.50294 15 4.1 14.5971 4.1 14.1C4.1 13.603 4.50294 13.2 5 13.2H8C8.03585 13.2 8.07122 13.2021 8.10598 13.2062C8.17012 13.2021 8.23482 13.2 8.3 13.2C9.13922 13.2 9.89795 13.5446 10.4424 14.1H15.7576C16.302 13.5446 17.0608 13.2 17.9 13.2C18.7379 13.2 19.4956 13.5435 20.0399 14.0974C20.1867 14.0779 20.3 13.9522 20.3 13.8V12.337C20.3 12.1993 20.2063 12.0793 20.0728 12.0459L18.0541 11.5412C17.326 11.3592 16.7504 10.8025 16.5442 10.0809L16.032 8.28794C15.848 7.64399 15.2594 7.20002 14.5897 7.20002H6.2C5.70294 7.20002 5.3 6.79708 5.3 6.30002ZM8.3 17.4C8.96274 17.4 9.5 16.8628 9.5 16.2C9.5 15.5373 8.96274 15 8.3 15C7.63726 15 7.1 15.5373 7.1 16.2C7.1 16.8628 7.63726 17.4 8.3 17.4ZM17.9 17.4C18.5627 17.4 19.1 16.8628 19.1 16.2C19.1 15.5373 18.5627 15 17.9 15C17.2373 15 16.7 15.5373 16.7 16.2C16.7 16.8628 17.2373 17.4 17.9 17.4Z\" fill=\"white\"/>\n        <path d=\"M4.4 9.60002C3.90294 9.60002 3.5 10.003 3.5 10.5C3.5 10.9971 3.90294 11.4 4.4 11.4H10.4C10.8971 11.4 11.3 10.9971 11.3 10.5C11.3 10.003 10.8971 9.60002 10.4 9.60002H4.4Z\" fill=\"white\"/>\n      </svg>\n    </div>\n    <div class=\"text-produced\">\n      Frete grátis centro Oeste em compras acima de <span class=\"highlight-bg\">R$250</span>\n    </div>\n  </div>\n\n</body>\n</html>",
-        "color_scheme": "scheme-d2d2ed25-f0f7-4524-b01f-94960e3172e6",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "top_bar_bg": "#ED1C24"
       }
     },
     "header": {
@@ -59,7 +75,7 @@
   },
   "order": [
     "announcement-bar",
-    "custom_liquid_MAVmPn",
+    "top_bar_iUznr7",
     "header"
   ]
 }
