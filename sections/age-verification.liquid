@@ -1,0 +1,164 @@
+<script src="{{ 'popups.js' | asset_url }}" defer="defer"></script>
+<div class="theme-modal-popup color-scheme-1{% if request.design_mode %} design__mode{% endif %}" aria-label="age-verification" data-popup-type="age-verification" data-popup-delay-days="{{ section.settings.popup_show_again }}" tabindex="-1" role="dialog" aria-modal="true">
+  <div class="theme-modal-popup_inner overflow-scrollbar">
+    <div class="modal-content sp-small">
+      {% render 'theme-icons', icon: 'icon-age-warning' %}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="modal-popup__heading inline-richtext {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+      {% if section.settings.description != blank %}
+        <div class="modal-popup__description rte">
+          {{ section.settings.description }}
+        </div>
+      {% endif %}
+      {%- if section.settings.button_label != blank or section.settings.secondary_button_label != blank -%}
+        <div class="modal-popup__buttons">
+          {% if section.settings.button_label != blank %}
+            <a
+              href="{{ request.origin }}"
+              class="age-varified__button button button--{{ section.settings.button_style }}"
+            >
+              {{- section.settings.button_label | escape -}}
+            </a>
+          {% endif %}
+          {% if section.settings.secondary_button_label != blank %}
+            <a
+              {% if section.settings.secondary_button_link %}
+                href="{{ section.settings.secondary_button_link }}"
+              {% else %}
+                href="https://www.google.com/"
+              {% endif %}
+              class="button button--{{ section.settings.secondary_button_style }}"
+            >
+              {{- section.settings.secondary_button_label | escape -}}
+            </a>
+          {% endif %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.popups.age_verification.name",
+  "tag": "section",
+  "class": "section section-theme-modal__popup",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer"
+    ]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "popup_show_again",
+      "min": 1,
+      "max": 30,
+      "step": 1,
+      "default": 7,
+      "label": "t:sections.popups.age_verification.settings.popup_delay.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.popups.age_verification.settings.header__1.content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "t:sections.popups.age_verification.settings.heading.default",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "default": "t:sections.popups.age_verification.settings.description.default",
+      "label": "t:sections.all.description.label"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "default": "t:sections.popups.age_verification.settings.approve_button_label.default",
+      "label": "t:sections.popups.age_verification.settings.approve_button_label.label"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.all.button_style.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.all.button_style.options__2.label"
+        },
+        {
+          "value": "outline",
+          "label": "t:sections.all.button_style.options__3.label"
+        }
+      ],
+      "default": "primary",
+      "label": "t:sections.popups.age_verification.settings.approve_button_style.label"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "default": "t:sections.popups.age_verification.settings.decline_button_label.default",
+      "label": "t:sections.popups.age_verification.settings.decline_button_label.label"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "t:sections.popups.age_verification.settings.decline_button_link.label"
+    },
+    {
+      "type": "select",
+      "id": "secondary_button_style",
+      "options": [
+        {
+          "value": "primary",
+          "label": "t:sections.all.button_style.options__1.label"
+        },
+        {
+          "value": "secondary",
+          "label": "t:sections.all.button_style.options__2.label"
+        },
+        {
+          "value": "outline",
+          "label": "t:sections.all.button_style.options__3.label"
+        }
+      ],
+      "default": "secondary",
+      "label": "t:sections.popups.age_verification.settings.decline_button_style.label"
+    }
+  ]
+}
+{% endschema %}

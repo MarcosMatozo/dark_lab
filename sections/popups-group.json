@@ -1,0 +1,83 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.popups",
+  "name": "Popups",
+  "sections": {
+    "age-verification": {
+      "type": "age-verification",
+      "disabled": true,
+      "settings": {
+        "popup_show_again": 7,
+        "heading": "Are you 18 or older?",
+        "heading_size": "h2",
+        "description": "<p>Verification required to ensure security and legitimacy of your identity or information.</p>",
+        "button_label": "Yes",
+        "button_style": "primary",
+        "secondary_button_label": "No",
+        "secondary_button_link": "",
+        "secondary_button_style": "secondary"
+      }
+    },
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "settings": {
+        "color_scheme": "",
+        "enable_recommendations": false,
+        "title": "Recommendations"
+      }
+    },
+    "cart-reminder": {
+      "type": "cart-reminder",
+      "settings": {}
+    },
+    "navigation-hub": {
+      "type": "navigation-hub",
+      "disabled": true,
+      "settings": {
+        "logo_width": 150,
+        "product_heading": "",
+        "product_list": [],
+        "image_ratio": "original",
+        "enable_product_slider": true,
+        "enable_quick_add": false,
+        "collection_heading": "Popular collections 🔥",
+        "collection_list": [],
+        "collection_image_ratio": "original",
+        "custom_ratio": 1.8,
+        "title_size": "h6",
+        "text_alignment": "center",
+        "show_product_count": false,
+        "enable_collection_slider": true,
+        "get_in_touch_heading": "Get in touch",
+        "show_social_icons": false,
+        "additional_info": "<h3>example@gmail.com <br/>+1 0123 456789</h3>"
+      }
+    },
+    "newsletter-popup": {
+      "type": "newsletter-popup",
+      "settings": {
+        "popup_show_again": 7,
+        "popup_delay_seconds": 2,
+        "image": "shopify://shop_images/Screenshot_2025-03-06_at_22.38.44_1.png",
+        "heading": "Receba todas as promoções",
+        "heading_size": "h2",
+        "description": "<p>Quer receber nossas ofertas? Cadastre-se e comece a recebê-las!<br/><br/></p>"
+      }
+    }
+  },
+  "order": [
+    "age-verification",
+    "cart-drawer",
+    "cart-reminder",
+    "navigation-hub",
+    "newsletter-popup"
+  ]
+}

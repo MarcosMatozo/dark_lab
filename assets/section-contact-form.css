@@ -1,0 +1,120 @@
+.contact img {
+  max-width: 100%;
+}
+.contact-form__information {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.header--head h3 {
+  margin-top: 0px;
+}
+.header--desc p {
+  margin: 0;
+}
+.contact_form_bottom textarea {
+  height: 200px;
+}
+.contact-information .contact__flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contact-information .contact__flex svg {
+  margin-right: 15px;
+}
+.contact-information .contact__flex a {
+  text-decoration: none;
+}
+.contact-information p {
+  margin: 0;
+}
+.contact-information .h6 {
+  margin: 0;
+}
+.contact-information {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--radius-20);
+}
+.contact .form__message {
+  align-items: flex-start;
+}
+.contact_form_bottom .form__message {
+  justify-content: center;
+}
+.contact .icon-success {
+  margin-top: 0.2rem;
+}
+
+.contact .field {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .contact .field {
+    margin-bottom: 2rem;
+  }
+}
+
+.contact__button {
+  margin-top: 15px;
+}
+.addition-message {
+  margin-top: 1.5rem;
+}
+@media screen and (min-width: 750px) {
+  .contact__button {
+    margin-top: 30px;
+  }
+  .contact__fields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+  }
+  .addition-message {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .contact-information {
+    gap: 15px;
+  }
+  .contact_form_bottom .field {
+    margin-bottom: 15px;
+  }
+  .contact-information .contact__flex {
+    width: 100%;
+  }
+  .contact_form_bottom .form__message {
+    margin-bottom: 25px;
+  }
+  .contact-information {
+    border-radius: var(--radius-10);
+  }
+  .contact-information .contact__flex {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .contact-information {
+    gap: 15px;
+  }
+  .contact_form_bottom .field {
+    margin-bottom: 15px;
+  }
+  .contact-information .contact__flex {
+    width: 100%;
+  }
+  .contact__fields {
+    display: block;
+  }
+}

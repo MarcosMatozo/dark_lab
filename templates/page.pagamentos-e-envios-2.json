@@ -1,0 +1,180 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_CXeRWA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_miwzyY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Pagamentos e envios",
+            "heading_size": "h2",
+            "autoslide": ""
+          }
+        },
+        "text_MAGxza": {
+          "type": "text",
+          "settings": {
+            "text": "<p>PAGAMENTOS</p><p>Aqui na Dark Lab você encontra um meio de pagamento seguro, através do Mercado Pago! Trabalhamos com todas as bandeiras abaixo:<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_miwzyY",
+        "text_MAGxza"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "expanded_width": true,
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 12
+      }
+    },
+    "slideshow_PfF4Ln": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_wUyJXm": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_2053.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_wUyJXm"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "rich_text_UgCRNA": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jhaHwF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Cartão de Crédito* (Visa, Mastercard, Hipercard, American Express, Dinners Club, Elo, Mercado Pago):O tempo de aprovação pode variar dependendo de qual forma de pagamento você irá utilizar, são geralmente aprovados em menos de 10 minutos!*Parcelamentos no cartão, sujeito a juros.</p><p>Boleto Bancário: Após o pagamento, pode levar até 72 horas úteis para o pagamento ser compensado.</p><p>PIX: Aprovado na mesma hora que efetua o pagamento, basta ler o QR Code ou copiar o código Copia e Cola, rápido e prático.<br/></p><p>Lembrando que nosso prazo de postagem começa a contar a partir da aprovação do pagamento de seu produto!<br/><br/>ENVIOS</p><p>Atualmente trabalhamos apenas com o sistema Padrão dos correios, sendo modalidade SEDEX e PAC:<br/><br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_jhaHwF"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "expanded_width": true,
+        "color_scheme": "",
+        "padding_top": 26,
+        "padding_bottom": 32
+      }
+    },
+    "slideshow_HzHa7H": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_ywXfwF": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_2053_1.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_ywXfwF"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "rich_text_8bRDGL": {
+      "type": "rich-text",
+      "blocks": {
+        "text_bxpAdF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Estamos providenciando já novas transportadoras em nossa loja e iremos disponibilizar essa informação aqui nessa pagina.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_bxpAdF"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "expanded_width": true,
+        "color_scheme": "",
+        "padding_top": 26,
+        "padding_bottom": 42
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_CXeRWA",
+    "slideshow_PfF4Ln",
+    "rich_text_UgCRNA",
+    "slideshow_HzHa7H",
+    "rich_text_8bRDGL"
+  ]
+}

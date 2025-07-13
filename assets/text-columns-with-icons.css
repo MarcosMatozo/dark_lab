@@ -1,0 +1,25 @@
+.icon-image {
+  margin-bottom: 3rem;
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--radius-20);
+}
+.icon-image>img {
+  max-width: 100%;
+  height: auto;
+}
+.text-with-icons--classic {
+  padding: 3rem;
+  height: 100%;
+  border-radius: var(--radius-20);
+  border: 1px solid rgba(var(--color-foreground),.2);
+}
+.text-with-icons-list {
+  margin-top: 0px;
+}
+@media screen and (max-width: 749px) {
+  .icon-image {
+    border-radius: var(--radius-10);
+    margin-bottom: 1.5rem;
+  }
+}

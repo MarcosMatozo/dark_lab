@@ -1,0 +1,345 @@
+{%- capture section_settings -%}
+{
+  "autoPlayReview": {{ section.settings.autoplay | json }},
+  "cycleSpeedReview": {{ section.settings.cycle_speed | times: 1000 | json }},
+  "pageDotsReview": {% if section.blocks.size > 1 and section.settings.show_dots %}true{% else %}false{% endif %}
+}
+{%- endcapture -%}
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<style>
+  .review-list-section {
+    padding: 15px;
+    background-color: #f5f5f5;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .section__header {
+    margin-bottom: 20px;
+  }
+  .section__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d2d2d;
+  }
+  .review-list {
+    position: relative;
+    padding: 25px
+  }
+  .swiper {
+    width: 100%; /* Ensure Swiper takes full width of container */
+    display: flex;
+    justify-content: center; /* Center the swiper wrapper */
+  }
+  .swiper-wrapper {
+    align-items: center; /* Center slides vertically if needed */
+  }
+  .swiper-slide {
+    width: 25%; /* 4 cards per view on desktop */
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  .review-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .review-card .review-text {
+    font-size: 14px;
+    color: #2d2d2d;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+  }
+  .review-card .review-meta {
+    text-align: left;
+  }
+  .review-card .review-name {
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+  }
+  .review-card .review-date {
+    font-size: 12px;
+    color: #888;
+    margin: 5px 0 10px 0;
+  }
+  .review-card .review-stars {
+    display: flex;
+    gap: 2px;
+  }
+  .review-card .star {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FFC107" width="18px" height="18px"><path d="M12 .587l3.668 7.431 8.332 1.151-6.001 5.822 1.417 8.274L12 18.937l-7.416 3.328 1.417-8.274-6.001-5.822 8.332-1.151z"/></svg>');
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #2d2d2d;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10; /* Ensure arrows are above slides */
+    display: flex!important;
+  }
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d2d2d; /* Ensure arrow color is visible */
+  }
+  .swiper-pagination {
+    margin-top: 20px;
+  }
+  .swiper-pagination-bullet {
+    background: #2d2d2d;
+    opacity: 0.3;
+    width: 8px;
+    height: 8px;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+  .reclameaqui-note {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+    text-align: end;
+  }
+  @media (max-width: 1024px) {
+    .swiper-slide {
+      width: 50%; /* 2 cards per view on tablet */
+    }
+    .swiper-button-prev {
+      left: 5px;
+    }
+    .swiper-button-next {
+      right: 5px;
+    }
+  }
+  @media (max-width: 768px) {
+    .swiper-slide {
+      width: 100%; /* 1 card per view on mobile */
+    }
+    .swiper-button-prev {
+      left: 5px;
+    }
+    .swiper-button-next {
+      right: 5px;
+    }
+  }
+</style>
+
+<section class="review-list-section" data-section-id="{{ section.id }}" data-section-type="review-list" data-section-settings='{{ section_settings }}'>
+  <div class="container">
+    <div class="row-fluid">
+      {% if section.settings.title != blank %}
+        <header class="section__header">
+          <div class="section__header-stack">
+            <h2 class="section__title">{{ section.settings.title }}</h2>
+          </div>
+        </header>
+      {% endif %}
+
+      <div class="swiper review-list">
+        <div class="swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide" data-review-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              <div class="review-card">
+                <p class="review-text">{{ block.settings.review_description }}</p>
+                <div class="review-meta">
+                  <p class="review-name">{{ block.settings.person_name }}</p>
+                  <p class="review-date">{{ block.settings.review_date }}</p>
+                  <div class="review-stars">
+                    {% for i in (1..block.settings.amount_stars) %}
+                      <span class="star"></span>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="reclameaqui-note">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="
+          width: 15px;
+          position: relative;
+          top: 2px;
+        ">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <g id="style=fill">
+              <g id="star">
+                <path id="vector (Stroke)" fill-rule="evenodd" clip-rule="evenodd" d="M14.4012 3.17499C13.8719 2.11134 13.0447 1.32715 11.9987 1.32715C10.9539 1.32715 10.1241 2.11 9.58985 3.17284L7.82915 6.69424L7.82642 6.69975C7.77359 6.8076 7.64731 6.9611 7.45702 7.10219C7.26737 7.2428 7.0834 7.31975 6.96547 7.34005L6.96441 7.34023L3.77705 7.86979C2.62694 8.06147 1.66106 8.62118 1.34801 9.6015C1.03519 10.5811 1.49663 11.597 2.31964 12.42L4.79964 14.9C4.89724 14.9976 5.0066 15.1815 5.07518 15.4211C5.14334 15.6592 5.1491 15.8751 5.11856 16.0137L5.11813 16.0156L4.40928 19.0806C4.11373 20.3578 4.21624 21.6259 5.12539 22.2893C6.03398 22.9522 7.27361 22.6647 8.40273 21.9946L11.3871 20.2279L11.389 20.2268C11.5232 20.1494 11.7443 20.0896 12.0037 20.0896C12.265 20.0896 12.4816 20.1502 12.6076 20.2249L15.5979 21.995C16.7284 22.6628 17.9695 22.9555 18.878 22.2932C19.7878 21.6299 19.8854 20.3595 19.5908 19.0812L18.8818 16.0156L18.8814 16.0137C18.8508 15.8751 18.8566 15.6592 18.9248 15.4211C18.9933 15.1815 19.1027 14.9976 19.2003 14.9L21.6785 12.4218L21.6795 12.4208C22.5077 11.5978 22.9706 10.5811 22.6552 9.60014C22.3403 8.62044 21.3726 8.06141 20.2233 7.86985L17.0333 7.33985" fill="#92c900"></path>
+              </g>
+            </g>
+          </g>
+        </svg>
+        Avaliações confiáveis do <img src="https://logodownload.org/wp-content/uploads/2018/03/reclame-aqui-logo.png" style="
+          width: 90px;
+          margin-left: 5px;
+          position: relative;
+          top: 2px;
+        ">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sectionSettings = {{ section_settings | json }};
+    const swiper = new Swiper('.review-list', {
+      slidesPerView: 4,
+      spaceBetween: 0,
+      loop: true, // Enable infinite scrolling
+      autoplay: sectionSettings.autoPlayReview ? {
+        delay: sectionSettings.cycleSpeedReview,
+        disableOnInteraction: false,
+      } : false,
+      pagination: sectionSettings.pageDotsReview ? {
+        el: '.swiper-pagination',
+        clickable: true,
+      } : false,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        1024: {
+          slidesPerView: 4,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      },
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Lista de avaliação",
+  "class": "page-width",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "VEJA O QUE FALAM DA NOSSA LOJA"
+    },   
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Troca automática de slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "cycle_speed",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "unit": "seg",
+      "label": "Mude os slides a cada",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Mostrar pontos de navegação",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Espaçamentos"
+    },
+    {
+      "type": "range",
+      "id": "espaco_acima",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Espaço Acima",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "espaco_abaixo",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "Espaço Abaixo",
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "avaliacao",
+      "name": "Avaliação",
+      "settings": [
+        {
+          "type": "text",
+          "id": "person_name",
+          "label": "Nome da pessoa"
+        },
+        {
+          "type": "text",
+          "id": "review_date",
+          "label": "Data da avaliação"
+        },
+        {
+          "type": "textarea",
+          "id": "review_description",
+          "label": "Descrição da avaliação"
+        },
+        {
+          "type": "range",
+          "id": "amount_stars",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "label": "Quantidade de estrelas",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lista de avaliação"
+    }
+  ]
+}
+{% endschema %}

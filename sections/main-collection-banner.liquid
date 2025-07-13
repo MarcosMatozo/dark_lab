@@ -1,0 +1,148 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'component-collection-hero.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'collection-description.js' | asset_url }}" defer="defer"></script>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.50 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.50 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="collection-hero section-{{ section.id }}-padding{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+   {%- if section.settings.show_collection_image and collection.image -%}
+      <div class="collection-hero__image-container media gradient">
+        <img
+            srcset="
+                {{ collection.image | image_url: width: 360 }} 360w,
+                {{ collection.image | image_url: width: 535 }} 535w,
+                {{ collection.image | image_url: width: 750 }} 750w,
+                {{ collection.image | image_url: width: 1070 }} 1070w,
+                {{ collection.image | image_url: width: 1500 }} 1500w,
+                {{ collection.image | image_url }} {{ collection.image.width }}w
+            "
+            src="{{ collection.image | image_url: width: 750 }}"
+            sizes="(min-width: 750px) 50vw, 100vw"
+            alt="{{ collection.image.alt | escape }}"
+            width="{{ collection.image.width }}"
+            height="{{ collection.image.height }}"
+        >
+      </div>
+    {%- endif -%}
+    <div class="collection-hero__text-wrapper">
+      <collection-description class="collection-description__inner">
+        <div class="collection-description-item gradient{% if section.settings.show_collection_description and collection.description != blank %} not-empty{% endif %}">
+          <div class="tab-heading">
+            <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+            <h1 class="inline-richtext h3 mg-none">{{ collection.title }}</h1>
+          </div>
+          {%- if section.settings.show_collection_description and collection.description != blank -%}
+            {% capture content %}
+              {{ collection.description }}
+            {% endcapture %}
+            {% liquid
+              if section.settings.collapse_content
+                assign truncateWords = content | strip_html | truncatewords: 40
+                assign wordCount = truncateWords | split: ' ' | size | times: 1
+              else
+                assign truncateWords = content
+              endif
+            %}
+            <div class="collection-description-content rte" id="tabs-{{ section.id }}-description">
+              <div class="showing-content rte">
+                {{ truncateWords }}
+                {% if wordCount >= 40 %}
+                  <p>
+                    <a href="#" class="tab-toggle__btn bold" data-id="tabs-{{ section.id }}-description" data-type="open">
+                      {{- 'products.product.read_more' | t -}}
+                    </a>
+                  </p>
+                {% endif %}
+              </div>
+              {% if wordCount >= 40 %}
+                <div class="hidden-content rte">
+                  {{ content }}
+                  <p>
+                    <a href="#" class="tab-toggle__btn bold" data-id="tabs-{{ section.id }}-description" data-type="close">
+                      {{- 'products.product.read_less' | t -}}
+                    </a>
+                  </p>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </collection-description>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-banner.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.paragraph.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_description",
+      "default": true,
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-banner.settings.show_collection_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapse_content",
+      "label": "t:sections.product-tabs.settings.expand_collapse.label",
+      "info": "t:sections.product-tabs.settings.expand_collapse.info",
+      "default": true
+    },
+     {
+      "type": "header",
+      "content": "t:sections.all.section_spacing.content",
+      "info": "t:sections.all.section_spacing.info"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_spacing.above",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.section_spacing.below",
+      "default": 100
+    }
+  ]
+}
+{% endschema %}

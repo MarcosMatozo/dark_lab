@@ -1,0 +1,56 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_CXeRWA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_miwzyY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Trocas e devoluções",
+            "heading_size": "h2",
+            "autoslide": ""
+          }
+        },
+        "text_MAGxza": {
+          "type": "text",
+          "settings": {
+            "text": "<p>PRAZO DE ARREPENDIMENTO<br/>A devolução de qualquer produto por desistência só pode ser feita no prazo de até 7 (sete) dias corridos, a contar da data de entrega para compras realizadas pela Internet.<br/>Para que o valor da compra seja devolvido, deverá ser encaminhado em sua embalagem original, sem qualquer indício de violação do lacre original do fabricante ou de uso. Deve ser realizada a devolução com o acompanhamento da DANFE (Nota Fiscal Eletrônica), e de todos os produtos contidos no pedido.<br/> <br/>TROCA POR OUTRO PRODUTO<br/>Todo o valor de frete para devolução e reenvio do produto será custeado pelo cliente, devendo devolver os produtos devidamente lacrados, embalados e com a nota fiscal para o endereço da empresa. Assim que os produtos forem recebidos estaremos contatando via e-mail passando os procedimentos para estorno do valor ou envio de um cupom, para que seja feita uma nova compra, assim realizando a troca caso for do interesse do cliente.<br/> <br/>TROCA POR DEFEITO OU ITEM DIVERGENTE<br/>No caso de troca por produtos que apresentarem defeito, o prazo para informar a ocorrência é de até 90 dias contados do recebimento do pedido pelo cliente (à partir da data de entrega da encomenda), o cliente deverá nos contatar imediatamente após a constatação via e-mail (contato@darklabsuplementos.com.br) além disso você não deverá descartar ou consumir o produto.<br/>O produto passará por uma análise técnica para verificar a presença de defeito na fabricação.<br/>Caso não seja constatado defeito, o produto será retornado ao cliente.<br/>Caso seja constatado defeito, o cliente poderá optar pela devolução do valor pago, pela troca do produto ou pela disponibilização do valor em Cupom.<br/>No caso do recebimento de um produto que não condiz com o comprado ou item faltante, você não deverá descartar ou consumir o produto. Mantenha todos os produtos intactos, assim como a caixa de transporte e nos contate via e-mail com a informação para que possamos solucionar o ocorrido.<br/> <br/>RECUSA DA ENCOMENDA (NO ATO DE ENTREGA)<br/>O cliente deve verificar a encomenda no ato de recebimento, caso sejam observados algum dos detalhes abaixo, deve ser recusado o recebimento da encomenda imediatamente e escrever o motivo de recusa no verso da nota fiscal:<br/></p><p> </p><ul><li>Produto avariado;</li><li>Embalagem aberta/violada ou avariada;</li><li>Produto em desacordo com o pedido;</li><li>Falta de item</li></ul><p><br/>Caso a encomenda tenha sido recebida sem ser verificada, ao encontrar qualquer divergência, o cliente deverá entrar em contato imediatamente com a nossa empresa através do e-mail (contato@darklabsuplementos.com.br), onde nenhum produto, etiqueta ou caixa devem ser descartados, devem permanecer conforme recebido no ato da entrega.  <br/>PRAZO PARA TROCA<br/>A Dark Lab possui o prazo de até 30 (trinta) dias corridos, contados a partir da data do recebimento do produto no nosso Centro de Distribuição, para verificar se a solicitação preenche os requisitos da Política de Trocas e Devoluções.<br/>Com produto similar em estoque, será enviado automaticamente outro produto ao cliente.<br/>No caso de falta do produto em estoque, serão oferecidas ao cliente as seguintes maneiras de solução do ocorrido: troca por outro produto, devolução do valor pago ou Cupom no valor.<br/> <br/>DEVOLUÇÃO DO VALOR PAGO<br/>A American Store fará a restituição dos valores pagos utilizando a mesma forma de pagamento escolhida pelo cliente no processo da compra.<br/>Em compras pagas via cartão de crédito, a administradora do cartão será notificada pelo nosso Gateway de pagamentos e o estorno ocorrerá na fatura seguinte ou na posterior, de uma só vez. O prazo de ressarcimento depende exclusivamente da administradora do cartão.<br/>Em compras pagas via boleto bancário, o estorno do valor será realizado por meio de PIX, após o recebimento e análise do(s) produto(s) no nosso Centro de Distribuição, onde o depósito será realizado em até 48 hrs úteis.<br/>Caso não sejam observadas os detalhes de troca ou devolução de qualquer produto devolvido, estando fora do prazo ou possuindo ausência de itens ou acessórios que o acompanham, a troca poderá não ser atendida com sucesso.<br/> <br/>ERRO NO ENDEREÇO<br/>Caso houver erro por parte do cliente no endereço de entrega ou ausência de informação, será cobrado o valor postal para reenvio ou para a devolução do valor ao cliente.<br/> <br/>FRETE GRÁTIS<br/>Caso o frete for grátis será descontado o valor postal pago aos Correios para reenvio ou devolução do valor.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_miwzyY",
+        "text_MAGxza"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "expanded_width": true,
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_CXeRWA"
+  ]
+}

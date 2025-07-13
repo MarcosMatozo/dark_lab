@@ -1,0 +1,151 @@
+
+
+<!-- sections/info-list.liquid -->
+<div class="header-top-bar-{{ section.id }}">
+  <div class="container-produced" style="background-color: {{ section.settings.top_bar_bg }};">
+
+    {% if section.blocks.size > 0 %}
+        <slider-component class="slider-mobile-gutter">
+            <div id="Slider-{{ section.id }}" class="slideshow banner banner--original grid grid--1-col slider mandatory slider--everywhere"
+             data-autoplay="true">
+                {% for block in section.blocks %}
+                    <div class="slideshow__slide grid__item grid--1-col slider__slide" id="Slide-{{ section.id }}-{{ forloop.index }}">
+                        
+                        {% case block.type %}
+                          {% when 'text_item' %}
+                              <div class="item-{{ section.id }}">
+                                {% if block.settings.icon_text != blank %}
+                                    <div class="icon-produced">
+                                    {{ block.settings.icon_text | image_url: width: 25 | image_tag }}
+                                    </div>
+                                {% endif %}
+                                <div class="text-produced">
+                                    {% if block.settings.content != blank %}
+                                    {{ block.settings.content  }}
+                                    {% endif %}
+                                </div>
+                              </div>
+                        {% endcase %}
+
+                    </div>
+                 
+                {% endfor %}
+            
+            </div>
+            <button type="button" class=" {{section.id }} slider-button slider-button--prev arrow-with-dots" name="previous" aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}">
+                {% render 'theme-icons', icon: 'slider-icon-left' %}
+            </button>
+            <button  type="button" class=" {{section.id }} slider-button slider-button--next arrow-with-dots" name="next" aria-label="{{ 'sections.slideshow.next_slideshow' | t }}">
+                {% render 'theme-icons', icon: 'slider-icon-right' %}
+            </button>
+        </slider-component>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+
+    .header-top-bar-{{ section.id }} .slider-button svg , .header-top-bar-{{ section.id }} .slider-button.{{section.id }} {
+        width: 20px !important;
+        height: 20px !important;
+    }
+    
+    .container-produced {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0px;
+      padding: 10px 12px;
+      background-color: #ED1C24;
+    }
+
+    .container-produced .item-{{ section.id }}{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon-produced {
+      width: 30px;
+      height: 20px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1rem;
+    }
+
+    
+    .icon-produced svg {
+      width: 25px !important;
+      height: 24px !important;
+      display: block;
+    }
+
+    .text-produced {
+      font-size: 12px;
+      color: #FFF;
+      white-space: nowrap; /* força tudo na mesma linha */
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .text-produced p { 
+        margin: 0 !important;
+    }
+
+    .highlight-bg, strong {
+      background-color: #181616;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 1px;
+      font-weight: bold;
+    }
+
+    @media only screen and (min-width: 768px) {
+      .text-produced {
+        font-size: 14px;
+      }
+    }
+  
+</style>
+
+{% schema %}
+{
+  "name": "Header Top Barsss",
+  "tag": "section",
+  "class": "header-top-bar",
+  "settings": [
+    {
+        "type": "color",
+        "id": "top_bar_bg",
+        "label": "Cor do background",
+        "default": "#ED1C24"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_item",
+      "name": "Item de Texto",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_text",
+          "label": "Ícone"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Paragraph"
+        } 
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header Top Bar",
+    }
+  ]
+}
+{% endschema %}

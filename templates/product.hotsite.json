@@ -1,0 +1,486 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h3"
+          }
+        },
+        "offer": {
+          "type": "offer",
+          "settings": {
+            "color_scheme": "scheme-c84de2fb-d2ee-49e0-a0d6-a6e2899a6ce1",
+            "content": "<p>🔥 Parabéns! Você garantiu 10% OFF</p>"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "color_swatch": true
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "inventory_threshold": 10,
+            "low_inventory_notice": "Hurry, limited stock available! Only ||count|| left in stock.",
+            "available_message": "In stock, and ready to ship"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "button_suggestions": "Order now",
+            "position_top": 70,
+            "show_gift_card_recipient": true
+          }
+        },
+        "icon-with-text": {
+          "type": "icon-with-text",
+          "disabled": true,
+          "settings": {
+            "icon_1": "icon-award",
+            "heading_1": "<strong>Icon</strong>",
+            "icon_2": "icon-return",
+            "heading_2": "<strong>Icon</strong>",
+            "icon_3": "icon-package",
+            "heading_3": "<strong>Icon</strong>"
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "COMPRE JUNTO",
+            "product_list_limit": 2,
+            "image_ratio": "portrait",
+            "enable_quick_add": true
+          }
+        },
+        "discount_tqW3Mt": {
+          "type": "discount",
+          "disabled": true,
+          "settings": {
+            "title": "Grab the discount",
+            "discount_code": "A1B2 3C4D 5E6F 7G8H",
+            "button_label": "Copy",
+            "copied_button_label": "Copied!"
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "share",
+        "title",
+        "offer",
+        "price",
+        "variant_picker",
+        "inventory",
+        "buy_buttons",
+        "icon-with-text",
+        "complementary",
+        "discount_tqW3Mt"
+      ],
+      "settings": {
+        "expanded_width": true,
+        "color_scheme": "scheme-1",
+        "gallery_layout": "thumbnail_slider vertical-scrollbar",
+        "constrain_to_viewport": false,
+        "media_fit": false,
+        "image_zoom": true,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "image_with_text_bEHGcN": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_UMwcBD": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Glutamina 500g",
+            "heading_size": "h2"
+          }
+        },
+        "text_bcgCTF": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A glutamina é uma substância que ajuda a manter a saúde do intestino, a melhorar a imunidade e a recuperar os músculos. Ela também ajuda a aumentar o gasto energético e a queimar calorias. <br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UMwcBD",
+        "text_bcgCTF"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "section_color_scheme": "",
+        "image_position_right": true,
+        "height": "original",
+        "color_scheme": "",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_animation": false,
+        "mobile_content_alignment": "left",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "image_with_text_Bp49gF": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_ihREaE": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "PRODUTO PREmium",
+            "heading_size": "h2"
+          }
+        },
+        "text_qt67BM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Qualidade e garantia de um produto produzido exclusivamente para oferecer o melhor desempenho e máxima ação no seu treino de forma intensa.<br/><br/>UMA TECNOLOGIA DARK LAB</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_ihREaE",
+        "text_qt67BM"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "section_color_scheme": "",
+        "image": "shopify://shop_images/image_14_1.png",
+        "image_position_right": true,
+        "height": "original",
+        "color_scheme": "",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "image_animation": false,
+        "mobile_content_alignment": "left",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "product_tabs": {
+      "type": "product-tabs",
+      "blocks": {
+        "tabs_1": {
+          "type": "tabs",
+          "settings": {
+            "heading": "Benefícios",
+            "content": "<p>Product tabs refer to a user interface design pattern commonly used on e-commerce websites and product pages to organize and present various types of information about a product. Instead of overwhelming users with a long, single-page description, product tabs help break down information into manageable sections, each accessible through a tab. Each tab typically contains specific details or features of the product.</p>",
+            "page": ""
+          }
+        },
+        "tabs_2": {
+          "type": "tabs",
+          "settings": {
+            "heading": "Outras informações",
+            "content": "<p>Product tabs refer to a user interface design pattern commonly used on e-commerce websites and product pages to organize and present various types of information about a product. Instead of overwhelming users with a long, single-page description, product tabs help break down information into manageable sections, each accessible through a tab. Each tab typically contains specific details or features of the product.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "tabs_1",
+        "tabs_2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+        "color_scheme_tab": "",
+        "tab_heading_size": "h3",
+        "description_tab": true,
+        "collapse_content": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "text_columns_with_icons_1": {
+      "type": "text-columns-with-icons",
+      "blocks": {
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-package",
+            "image": "shopify://shop_images/graphic.png",
+            "title": "70% CARACTERÍSTICA 1",
+            "text": ""
+          }
+        },
+        "column_2": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-shopping-cart",
+            "image": "shopify://shop_images/graphic_1.png",
+            "title": "50% CARACTERÍSTICA 2",
+            "text": ""
+          }
+        },
+        "column_3": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-user",
+            "image": "shopify://shop_images/graphic_2.png",
+            "title": "100% CARACTERÍSTICA 3",
+            "text": ""
+          }
+        },
+        "column_4": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-lock",
+            "image": "shopify://shop_images/graphic_3.png",
+            "title": "0% CARACTERÍSTICA 4",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_1",
+        "column_2",
+        "column_3",
+        "column_4"
+      ],
+      "settings": {
+        "title": "CARACTErÍSTICAS DO PRODUTO",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "scheme-8690babf-868d-4ed7-8ad7-21eeeea573c9",
+        "style": "simple",
+        "column_per_row": 4,
+        "title_size": "h5",
+        "text_alignment": "center",
+        "column_per_row_mobile": "2",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "title": "Você também pode gostar",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+        "products_to_show": 8,
+        "products_per_row": 4,
+        "enable_slider_scrollbar": true,
+        "grid_color_scheme": "",
+        "grid_style": "classic",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "show_color_swatches": true,
+        "grid_text_alignment": "center",
+        "products_per_row_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "custom_liquid_y6eBkm": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        ".icons-wrapper {display: flex; background: #181616; border: 1px solid #2d2d2d; border-radius: 16px; padding: 20px; /* padding geral */ padding-left: 20px; /* padding lateral */ padding-right: 20px; /* padding lateral */ max-width: 1200px; /* largura máxima da área de conteúdo */ margin: 0 auto; /* centraliza horizontalmente */ box-sizing: border-box; color: #ffffff; justify-content: space-between; flex-wrap: nowrap;}"
+      ],
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n  <title>Ícones em linha</title>\n  <style>\n    .icons-wrapper {\n      display: flex;\n      background: #181616;\n      width: calc(100% + 40px);\n      margin-left: -20px;\n      border: 1px solid #2D2D2D;\n      border-radius: 16px;\n      padding: 20px;\n      box-sizing: border-box;\n      color: #ffffff;\n      justify-content: space-between;\n      flex-wrap: nowrap;\n    }\n\n    .icons-wrapper .icon-box {\n      width: 25%;\n      text-align: center;\n      padding: 10px;\n      font-size: 14px;\n      color: #ffffff;\n      box-sizing: border-box;\n    }\n\n    .icons-wrapper .icon-box img {\n      width: 30px;\n      height: 30px;\n      margin-bottom: 10px;\n    }\n\n    .icon-title {\n      font-weight: bold;\n      font-size: 14px;\n      margin-bottom: 5px;\n    }\n\n    .icon-text {\n      font-size: 12px;\n      color: #c0c0c0;\n    }\n\n    @media screen and (max-width: 767px) {\n      .icons-wrapper {\n        flex-direction: column;\n        gap: 16px;\n      }\n\n      .icon-box {\n        width: 100% !important;\n      }\n    }\n  </style>\n</head>\n<body>\n  <div class=\"icons-wrapper desk_hide\">\n    <div class=\"icon-box\">\n      <img src=\"https://example.com/icon1.svg\" alt=\"Ícone 1\" />\n      <div class=\"icon-title\">ENTREGA RÁPIDA</div>\n      <div class=\"icon-text\">Para todo o país</div>\n    </div>\n    <div class=\"icon-box\">\n      <img src=\"https://example.com/icon2.svg\" alt=\"Ícone 2\" />\n      <div class=\"icon-title\">ATÉ 5% OFF</div>\n      <div class=\"icon-text\">Para pagamentos via PIX</div>\n    </div>\n    <div class=\"icon-box\">\n      <img src=\"https://example.com/icon3.svg\" alt=\"Ícone 3\" />\n      <div class=\"icon-title\">SUA COMPRA SEGURA</div>\n      <div class=\"icon-text\">Com o Mercado Pago</div>\n    </div>\n    <div class=\"icon-box\">\n      <img src=\"https://example.com/icon4.svg\" alt=\"Ícone 4\" />\n      <div class=\"icon-title\">ATENDIMENTO EXCLUSIVO</div>\n      <div class=\"icon-text\">Contato personalizado</div>\n    </div>\n  </div>\n</body>\n</html>",
+        "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "text_columns_with_icons_kmETyH": {
+      "type": "text-columns-with-icons",
+      "blocks": {
+        "column_H8VYLR": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-truck-svg",
+            "title": "Entrega Rápida",
+            "text": "<p>Para todo o país<br/><br/></p>"
+          }
+        },
+        "column_xrEtGp": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-award",
+            "title": "Até 5% Off",
+            "text": "<p>Para pagamentos via PIX<br/><br/></p>"
+          }
+        },
+        "column_QmNXiz": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-lock",
+            "title": "Sua compra segura",
+            "text": "<p>Com o Mercado Pago<br/><br/></p>"
+          }
+        },
+        "column_Hdkxc9": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-chat",
+            "title": "Atendimento exclusivo",
+            "text": "<p>Contato personalizado<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_H8VYLR",
+        "column_xrEtGp",
+        "column_QmNXiz",
+        "column_Hdkxc9"
+      ],
+      "disabled": true,
+      "name": "t:sections.text-columns-with-icons.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "",
+        "style": "simple",
+        "column_per_row": 4,
+        "title_size": "h5",
+        "text_alignment": "center",
+        "column_per_row_mobile": "2",
+        "padding_top": 42,
+        "padding_bottom": 42
+      }
+    },
+    "custom_liquid_Caqb7b": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+        "padding_top": 18,
+        "padding_bottom": 18
+      }
+    },
+    "faq_3WHHEc": {
+      "type": "faq",
+      "blocks": {
+        "content_ntb9xP": {
+          "type": "content",
+          "settings": {
+            "subheading": "",
+            "heading": "Tire suas dúvidas",
+            "heading_size": "h2",
+            "description": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary"
+          }
+        },
+        "faq_zJWDU6": {
+          "type": "faq",
+          "settings": {
+            "heading": "Título da pergunta",
+            "description": "<p>Resposta da pergunta</p>"
+          }
+        },
+        "faq_VJ8hN7": {
+          "type": "faq",
+          "settings": {
+            "heading": "Título da pergunta",
+            "description": "<p>Resposta da pergunta</p>"
+          }
+        },
+        "faq_zpYLKi": {
+          "type": "faq",
+          "settings": {
+            "heading": "Título da pergunta",
+            "description": "<p>Resposta da pergunta</p>"
+          }
+        },
+        "faq_FMkRnh": {
+          "type": "faq",
+          "settings": {
+            "heading": "Título da pergunta",
+            "description": "<p>Resposta da pergunta</p>"
+          }
+        }
+      },
+      "block_order": [
+        "content_ntb9xP",
+        "faq_zJWDU6",
+        "faq_VJ8hN7",
+        "faq_zpYLKi",
+        "faq_FMkRnh"
+      ],
+      "name": "t:sections.faq.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "color_scheme": "scheme-aec155d0-6baa-429f-9a9f-ce232ccaf331",
+        "vertical_scrolling": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_bEHGcN",
+    "image_with_text_Bp49gF",
+    "product_tabs",
+    "text_columns_with_icons_1",
+    "related-products",
+    "custom_liquid_y6eBkm",
+    "text_columns_with_icons_kmETyH",
+    "custom_liquid_Caqb7b",
+    "faq_3WHHEc"
+  ]
+}

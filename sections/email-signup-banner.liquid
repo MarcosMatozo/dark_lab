@@ -1,0 +1,849 @@
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+{{ 'component-newsletter.css' | asset_url | stylesheet_tag }}
+{{ 'newsletter-section.css' | asset_url | stylesheet_tag }}
+{{ 'section-email-signup-banner.css' | asset_url | stylesheet_tag }}
+
+<div
+  id="Banner-{{ section.id }}"
+  class="email-signup-banner "
+>
+  <div class="banner__content page-width">
+    <div class="email-signup-banner__box banner__box newsletter newsletter__wrapper isolate content-container gradient content-container--full-width-mobile">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'heading' -%}
+            <h2 class="email-signup-banner__heading hide_form_email" {{ block.shopify_attributes }}>
+              {{ block.settings.heading | escape }}
+            </h2>
+            <h2 class="email-signup-banner__heading hide_form_pass" {{ block.shopify_attributes }}>
+              {{ 'general.password_page.login_form_heading' | t }}
+            </h2>
+          {%- when 'paragraph' -%}
+            <div class="newsletter__subheading rte hide_form_email" {{ block.shopify_attributes }}>
+              {{ block.settings.text }}
+            </div>
+            <div class="newsletter__subheading hide_form_pass" {{ block.shopify_attributes }}>
+              {{ 'general.password_page.login_form_heading_sub' | t }}
+            </div>
+          {%- when 'clock' -%}
+            <div class="section__countdown-clock password_countdown_clock color-{{ block.settings.color_scheme }} gradient">
+              {% for block in section.blocks %}
+                {% if block.type == 'clock' %}
+                  {% liquid
+                    assign tag = 'div'
+                    if block.settings.enable_clock
+                      assign tag = 'countdown-clock'
+                    endif
+                  %}
+                  <div class="countdown__block countdown__block-type-{{ block.type }}" {{ block.shopify_attributes }}>
+                    <{{ tag }}
+                      data-year="{{ block.settings.year }}"
+                      data-month="{{ block.settings.month }}"
+                      data-day="{{ block.settings.day }}"
+                      data-hour="{{ block.settings.hour }}"
+                      data-minute="{{ block.settings.minute }}"
+                      data-hide-clock="{{ block.settings.hide_clock }}"
+                      data-complete-message="{{ block.settings.text }}"
+                    >
+                      <div class="countdown__clock">
+                        <div class="countdown__clock-block">
+                          <h2 class="h1 clock__days ">{{ 'sections.countdown_clock.default' | t }}</h2>
+                          <p class="special--small">{{ 'sections.countdown_clock.days' | t }}</p>
+                        </div>
+                        <div class="countdown__clock-block">
+                          <h2 class="h1 clock__hours">{{ 'sections.countdown_clock.default' | t }}</h2>
+                          <p class="special--small">{{ 'sections.countdown_clock.hours' | t }}</p>
+                        </div>
+                        <div class="countdown__clock-block">
+                          <h2 class="h1 clock__minutes">{{ 'sections.countdown_clock.default' | t }}</h2>
+                          <p class="special--small">{{ 'sections.countdown_clock.minutes' | t }}</p>
+                        </div>
+                        <div class="countdown__clock-block">
+                          <h2 class="h1 clock__seconds ">{{ 'sections.countdown_clock.default' | t }}</h2>
+                          <p class="special--small">{{ 'sections.countdown_clock.seconds' | t }}</p>
+                        </div>
+                      </div>
+                    </{{ tag }}>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {%- when 'email_form' -%}
+            <div {{ block.shopify_attributes }} class="form_pass_box hide_form_email">
+              {% form 'customer', class: 'newsletter-form password_form' %}
+                <input type="hidden" name="contact[tags]" value="newsletter">
+                <div class="newsletter-form__field-wrapper">
+                  <div class="password-field field">
+                    <input
+                      id="NewsletterForm--{{ section.id }}"
+                      type="email"
+                      name="contact[email]"
+                      class="field__input"
+                      value="{{ form.email }}"
+                      aria-required="true"
+                      autocorrect="off"
+                      autocapitalize="off"
+                      autocomplete="email"
+                      {% if form.errors %}
+                        autofocus
+                        aria-invalid="true"
+                        aria-describedby="Newsletter-error--{{ section.id }}"
+                      {% elsif form.posted_successfully? %}
+                        aria-describedby="Newsletter-success--{{ section.id }}"
+                      {% endif %}
+                      placeholder="{{ 'newsletter.label' | t }}"
+                      required
+                    >
+                    <label class="field__label" for="NewsletterForm--{{ section.id }}">
+                      {{ 'newsletter.label' | t }}
+                    </label>
+                  </div>
+                  <div class="pass_form_btn">
+                    <button
+                      type="submit"
+                      class="button--primary button"
+                      name="commit"
+                      id="Subscribe"
+                      aria-label="{{ 'newsletter.button_label' | t }}"
+                    >
+                      {{ 'general.password_page.login_form_btn' | t }}
+                    </button>
+                  </div>
+                </div>
+                {%- if form.posted_successfully? -%}
+                  <div class="op-success-message addition-message"
+                    id="Newsletter-success--{{ section.id }}"
+                    tabindex="-1">
+                    {% render 'theme-icons', icon: 'check' %}
+                    {{- 'newsletter.success' | t }}
+                  </div>
+                {%- elsif form.errors -%}
+                  <div class="op-error-message addition-message" id="Newsletter-error--{{ section.id }}">
+                    {%- render 'theme-icons', icon: 'error' -%}
+                    {{- form.errors.translated_fields.email | capitalize }}
+                    {{ form.errors.messages.email -}}
+                  </div>
+                {%- endif -%}
+              {% endform %}
+              <div class="bottom_link_pass">
+                <a onclick="PasswordFormOpen()" href="#login_form" class="underlined-link">
+                  {{ 'general.password_page.login_password_button' | t }}
+                </a>
+              </div>
+            </div>
+            <div class="password_login_form_data hide_form_pass">
+              {%- form 'storefront_password', class: 'password-form' -%}
+                <div class="password-form__fields">
+                  <div class="password-field field{% if form.errors %} password-field--error{% endif %}">
+                    <input
+                      type="password"
+                      required
+                      name="password"
+                      id="Password"
+                      class="field__input"
+                      autocomplete="current-password"
+                      {% if form.errors %}
+                        aria-invalid="true"
+                        aria-describedby="PasswordLoginForm-password-error"
+                      {%- endif -%}
+                      placeholder="{{ 'general.password_page.login_form_password_placeholder' | t }}"
+                    >
+                    <label class="field__label" for="{{ 'general.password_page.login_form_password_label' | t }}">
+                      {{- 'general.password_page.login_form_password_placeholder' | t -}}
+                    </label>
+                  </div>
+                  <button name="commit" class="password-button button button--primary button">
+                    {{ 'general.password_page.login_form_submit' | t }}
+                  </button>
+                </div>
+                {%- if form.errors -%}
+                  <div class="op-error-message addition-message" id="PasswordLoginForm-password-error">
+                    <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+                    {%- render 'theme-icons', icon: 'error' -%}
+                    {{ 'general.password_page.login_form_error' | t -}}
+                  </div>
+                {% endif %}
+              {%- endform -%}
+              <div class="bottom_link_pass">
+                <a onclick="PasswordFormClose()" href="#contact_form" class="underlined-link">
+                  {{ 'general.password_page.login_password_return' | t }}
+                </a>
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'countdown-clock.js' | asset_url }}" defer></script>
+{% schema %}
+{
+  "name": "t:sections.email-signup-banner.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.email-signup-banner.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "t:sections.email-signup-banner.blocks.heading.settings.heading.default",
+          "label": "t:sections.email-signup-banner.blocks.heading.settings.heading.label"
+        }
+      ]
+    },
+    {
+      "type": "clock",
+      "name": "t:sections.email-signup-banner.blocks.clock.name",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_clock",
+          "label": "t:sections.email-signup-banner.blocks.clock.settings.enable_clock.label",
+          "default": true
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-5"
+        },
+        {
+          "type": "select",
+          "id": "year",
+          "label": "t:sections.email-signup-banner.blocks.clock.settings.year.label",
+          "default": "2024",
+          "options": [
+            {
+              "value": "2024",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.year.option.option_1.label"
+            },
+            {
+              "value": "2025",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.year.option.option_2.label"
+            },
+            {
+              "value": "2026",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.year.option.option_3.label"
+            },
+            {
+              "value": "2027",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.year.option.option_4.label"
+            },
+            {
+              "value": "2028",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.year.option.option_5.label"
+            },
+            {
+              "value": "2029",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.year.option.option_6.label"
+            },
+            {
+              "value": "2030",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.year.option.option_7.label"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "month",
+          "label": "t:sections.email-signup-banner.blocks.clock.settings.month.label",
+          "default": "01",
+          "options": [
+            {
+              "value": "01",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.01.label"
+            },
+            {
+              "value": "02",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.02.label"
+            },
+            {
+              "value": "03",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.03.label"
+            },
+            {
+              "value": "04",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.04.label"
+            },
+            {
+              "value": "05",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.05.label"
+            },
+            {
+              "value": "06",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.06.label"
+            },
+            {
+              "value": "07",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.07.label"
+            },
+            {
+              "value": "08",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.08.label"
+            },
+            {
+              "value": "09",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.09.label"
+            },
+            {
+              "value": "10",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.10.label"
+            },
+            {
+              "value": "11",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.11.label"
+            },
+            {
+              "value": "12",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.month.options.12.label"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "day",
+          "label": "t:sections.email-signup-banner.blocks.clock.settings.day.label",
+          "default": "1",
+          "options": [
+            {
+              "value": "1",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_1.label"
+            },
+            {
+              "value": "2",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_2.label"
+            },
+            {
+              "value": "3",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_3.label"
+            },
+            {
+              "value": "4",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_4.label"
+            },
+            {
+              "value": "5",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_5.label"
+            },
+            {
+              "value": "6",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_6.label"
+            },
+            {
+              "value": "7",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_7.label"
+            },
+            {
+              "value": "8",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_8.label"
+            },
+            {
+              "value": "9",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_9.label"
+            },
+            {
+              "value": "10",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_10.label"
+            },
+            {
+              "value": "11",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_11.label"
+            },
+            {
+              "value": "12",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_12.label"
+            },
+            {
+              "value": "13",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_13.label"
+            },
+            {
+              "value": "14",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_14.label"
+            },
+            {
+              "value": "15",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_15.label"
+            },
+            {
+              "value": "16",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_16.label"
+            },
+            {
+              "value": "17",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_17.label"
+            },
+            {
+              "value": "18",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_18.label"
+            },
+            {
+              "value": "19",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_19.label"
+            },
+            {
+              "value": "20",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_20.label"
+            },
+            {
+              "value": "21",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_21.label"
+            },
+            {
+              "value": "22",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_22.label"
+            },
+            {
+              "value": "23",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_23.label"
+            },
+            {
+              "value": "24",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_24.label"
+            },
+            {
+              "value": "25",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_25.label"
+            },
+            {
+              "value": "26",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_26.label"
+            },
+            {
+              "value": "27",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_27.label"
+            },
+            {
+              "value": "28",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_28.label"
+            },
+            {
+              "value": "29",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_29.label"
+            },
+            {
+              "value": "30",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_30.label"
+            },
+            {
+              "value": "31",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.day.option.option_31.label"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "hour",
+          "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.label",
+          "default": "01",
+          "options": [
+            {
+              "value": "00",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.00.label"
+            },
+            {
+              "value": "01",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.01.label"
+            },
+            {
+              "value": "02",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.02.label"
+            },
+            {
+              "value": "03",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.03.label"
+            },
+            {
+              "value": "04",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.04.label"
+            },
+            {
+              "value": "05",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.05.label"
+            },
+            {
+              "value": "06",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.06.label"
+            },
+            {
+              "value": "07",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.07.label"
+            },
+            {
+              "value": "08",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.08.label"
+            },
+            {
+              "value": "09",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.09.label"
+            },
+            {
+              "value": "10",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.10.label"
+            },
+            {
+              "value": "11",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.11.label"
+            },
+            {
+              "value": "12",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.12.label"
+            },
+            {
+              "value": "13",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.13.label"
+            },
+            {
+              "value": "14",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.14.label"
+            },
+            {
+              "value": "15",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.15.label"
+            },
+            {
+              "value": "16",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.16.label"
+            },
+            {
+              "value": "17",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.17.label"
+            },
+            {
+              "value": "18",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.18.label"
+            },
+            {
+              "value": "19",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.19.label"
+            },
+            {
+              "value": "20",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.20.label"
+            },
+            {
+              "value": "21",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.21.label"
+            },
+            {
+              "value": "22",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.22.label"
+            },
+            {
+              "value": "23",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.hour.options.23.label"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "minute",
+          "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.label",
+          "default": "00",
+          "options": [
+            {
+              "value": "00",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_0.label"
+            },
+            {
+              "value": "01",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_1.label"
+            },
+            {
+              "value": "02",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_2.label"
+            },
+            {
+              "value": "03",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_3.label"
+            },
+            {
+              "value": "04",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_4.label"
+            },
+            {
+              "value": "05",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_5.label"
+            },
+            {
+              "value": "06",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_6.label"
+            },
+            {
+              "value": "07",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_7.label"
+            },
+            {
+              "value": "08",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_8.label"
+            },
+            {
+              "value": "09",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_9.label"
+            },
+            {
+              "value": "10",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_10.label"
+            },
+            {
+              "value": "11",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_11.label"
+            },
+            {
+              "value": "12",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_12.label"
+            },
+            {
+              "value": "13",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_13.label"
+            },
+            {
+              "value": "14",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_14.label"
+            },
+            {
+              "value": "15",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_15.label"
+            },
+            {
+              "value": "16",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_16.label"
+            },
+            {
+              "value": "17",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_17.label"
+            },
+            {
+              "value": "18",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_18.label"
+            },
+            {
+              "value": "19",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_19.label"
+            },
+            {
+              "value": "20",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_20.label"
+            },
+            {
+              "value": "21",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_21.label"
+            },
+            {
+              "value": "22",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_22.label"
+            },
+            {
+              "value": "23",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_23.label"
+            },
+            {
+              "value": "24",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_24.label"
+            },
+            {
+              "value": "25",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_25.label"
+            },
+            {
+              "value": "26",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_26.label"
+            },
+            {
+              "value": "27",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_27.label"
+            },
+            {
+              "value": "28",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_28.label"
+            },
+            {
+              "value": "29",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_29.label"
+            },
+            {
+              "value": "30",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_30.label"
+            },
+            {
+              "value": "31",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_31.label"
+            },
+            {
+              "value": "32",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_32.label"
+            },
+            {
+              "value": "33",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_33.label"
+            },
+            {
+              "value": "34",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_34.label"
+            },
+            {
+              "value": "35",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_35.label"
+            },
+            {
+              "value": "36",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_36.label"
+            },
+            {
+              "value": "37",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_37.label"
+            },
+            {
+              "value": "38",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_38.label"
+            },
+            {
+              "value": "39",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_39.label"
+            },
+            {
+              "value": "40",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_40.label"
+            },
+            {
+              "value": "41",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_41.label"
+            },
+            {
+              "value": "42",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_42.label"
+            },
+            {
+              "value": "43",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_43.label"
+            },
+            {
+              "value": "44",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_44.label"
+            },
+            {
+              "value": "45",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_45.label"
+            },
+            {
+              "value": "46",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_46.label"
+            },
+            {
+              "value": "47",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_47.label"
+            },
+            {
+              "value": "48",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_48.label"
+            },
+            {
+              "value": "49",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_49.label"
+            },
+            {
+              "value": "50",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_50.label"
+            },
+            {
+              "value": "51",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_51.label"
+            },
+            {
+              "value": "52",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_52.label"
+            },
+            {
+              "value": "53",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_53.label"
+            },
+            {
+              "value": "54",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_54.label"
+            },
+            {
+              "value": "55",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_55.label"
+            },
+            {
+              "value": "56",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_56.label"
+            },
+            {
+              "value": "57",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_57.label"
+            },
+            {
+              "value": "58",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_58.label"
+            },
+            {
+              "value": "59",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_59.label"
+            },
+            {
+              "value": "60",
+              "label": "t:sections.email-signup-banner.blocks.clock.settings.minute.option.option_60.label"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_clock",
+          "label": "t:sections.email-signup-banner.blocks.clock.settings.hide_clock.label",
+          "default": false
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "type": "paragraph",
+      "name": "t:sections.email-signup-banner.blocks.paragraph.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "t:sections.email-signup-banner.blocks.paragraph.settings.paragraph.default",
+          "label": "t:sections.email-signup-banner.blocks.paragraph.settings.paragraph.label"
+        }
+      ]
+    },
+    {
+      "type": "email_form",
+      "name": "t:sections.email-signup-banner.blocks.email_form.name",
+      "limit": 1
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.email-signup-banner.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "paragraph"
+        },
+        {
+          "type": "clock"
+        },
+        {
+          "type": "email_form"
+        }
+      ]
+    }
+  ],
+  "templates": [
+    "password"
+  ]
+}
+{% endschema %}

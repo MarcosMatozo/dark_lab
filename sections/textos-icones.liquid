@@ -1,0 +1,276 @@
+
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<style>
+  .icons-section {
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #2D2D2D;
+    background: #181616;
+  }
+  .icon-header {
+    margin-bottom: 20px;
+  }
+  .icon-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2d2d2d;
+  }
+  .icon-list {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    overflow: hidden;
+  }
+  .icon-swiper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .icon-swiper-wrapper {
+    align-items: center;
+  }
+  .icon-swiper-slide {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+  }
+  .icon-box {
+    width: 100%;
+    font-size: 14px;
+    color: #ffffff;
+    box-sizing: border-box;
+  }
+  .icon-box img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  .icon-item-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #BCBEC0;
+  }
+  .icon-item-text {
+    font-size: 12px;
+    color: #939598;
+  }
+  .icon-swiper-button-prev,
+  .icon-swiper-button-next {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #2d2d2d;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: none;
+  }
+  .icon-swiper-button-prev {
+    left: 10px;
+  }
+  .icon-swiper-button-next {
+    right: 10px;
+  }
+  .icon-swiper-button-prev::after,
+  .icon-swiper-button-next::after {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2d2d2d;
+  }
+  .icon-swiper-pagination {
+    margin-top: 10px;
+    display: none;
+  }
+  .icon-swiper-pagination-bullet {
+    background: #ffffff;
+    opacity: 0.3;
+    width: 8px;
+    height: 8px;
+  }
+  .icon-swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+  .icons-section .swiper-button-prev, .icons-section .swiper-button-next {
+    background: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    bottom: 50% !important;
+    top: auto;
+    transform: translateY(50%);
+    z-index: 10;
+    display: flex !important
+;
+  }
+ .icons-section .swiper-button-prev::after, .icons-section .swiper-button-next::after {
+   color: white!important;
+ }
+  @media screen and (max-width: 767px) {
+    .icons-wrapper {
+      padding: 10px;
+    }
+    .icon-swiper-slide {
+      width: 100%;
+    }
+    .icon-swiper-button-prev,
+    .icon-swiper-button-next {
+      display: block;
+    }
+    .icon-swiper-pagination {
+      display: block;
+    }
+  }
+  @media screen and (min-width: 767px) {
+    .icons-section .swiper-button-prev, .icons-section .swiper-button-next {
+      display: none !important;
+    }
+  }
+</style>
+
+<section class="icons-section" data-section-id="{{ section.id }}" data-section-type="icons-section">
+  <div class="container">
+    <div class="row-fluid">
+      {% if section.settings.title != blank %}
+        <header class="icon-header">
+          <div class="section__header-stack">
+            <h2 class="icon-title">{{ section.settings.title }}</h2>
+          </div>
+        </header>
+      {% endif %}
+      <div class="swiper icons-wrapper icon-list">
+        <div class="swiper-wrapper icon-swiper-wrapper">
+          {% for block in section.blocks %}
+            <div class="swiper-slide icon-swiper-slide">
+              <div class="icon-box">
+                {% if block.settings.icon_image != blank %}
+                  <img src="{{ block.settings.icon_image | img_url: '30x30' }}" alt="{{ block.settings.title }}">
+                {% endif %}
+                <div class="icon-item-title">{{ block.settings.title }}</div>
+                <div class="icon-item-text">{{ block.settings.text }}</div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-button-prev icon-swiper-button-prev"></div>
+        <div class="swiper-button-next icon-swiper-button-next"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.icon-list', {
+      slidesPerView: 4,
+      spaceBetween: 0,
+      loop: false,
+      navigation: {
+        nextEl: '.icon-swiper-button-next',
+        prevEl: '.icon-swiper-button-prev',
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 4,
+        },
+        0: {
+          slidesPerView: 1,
+        },
+      },
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Ícones Personalizados",
+  "class": "page-width",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Nossos Benefícios"
+    },
+    {
+      "type": "header",
+      "content": "Espaçamentos"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaço Acima",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Espaço Abaixo",
+      "default": 15
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon_item",
+      "name": "Item de Ícone",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Imagem do Ícone"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "Título do Ícone"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Texto",
+          "default": "Descrição do ícone"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ícones Personalizados",
+      "blocks": [
+        {
+          "type": "icon_item"
+        },
+        {
+          "type": "icon_item"
+        },
+        {
+          "type": "icon_item"
+        },
+        {
+          "type": "icon_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

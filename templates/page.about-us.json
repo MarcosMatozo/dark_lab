@@ -1,0 +1,100 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_Je7J8H": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_QFwRRU": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/AnyConv.com__image.webp",
+            "mobile_image": "shopify://shop_images/image_2f464349-ca6c-4ffd-8665-3a90a75b11e7.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_QFwRRU"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "rich_text_CXeRWA": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_miwzyY": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Quem somos",
+            "heading_size": "h2",
+            "autoslide": ""
+          }
+        },
+        "text_MAGxza": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A Dark Lab é uma empresa de suplementos alimentares que<br/>busca oferecer produtos de alta qualidade e eficácia para atletas, praticantes de atividades físicas e pessoas que buscam uma vida mais saudável.<br/><br/>Fundada em 2018, a Dark Lab tem como missão fornecer suplementos que possam<br/>contribuir para o alcance dos objetivos dos seus clientes. Nossa equipe é<br/>formada por profissionais especializados e comprometidos em desenvolver<br/>fórmulas exclusivas que contemplem as necessidades específicas de cada público.<br/>Trabalhamos com matérias-primas importadas e nacionais, rigorosamente<br/>selecionadas, e com as mais modernas tecnologias de produção. Nosso compromisso<br/>com a qualidade se estende ao processo de distribuição e atendimento ao<br/>cliente, sempre visando a satisfação e fidelização dos nossos consumidores.<br/><br/><br/>Com a Dark Lab, você tem a certeza de estar adquirindo produtos de confiança e eficazes para melhorar a sua performance e alcançar seus objetivos.<br/><br/> <br/>Quem é o dono da Dark Lab?<br/><br/><br/>A Dark Lab é uma marca pertencente à American Product, uma empresa com mais de 10 anos de atuação no mercado de suplementação alimentar. Especializada em fornecer produtos de alta qualidade diretamente ao consumidor, a American Product se destaca pela sua vasta experiência e excelência no atendimento. A<br/>empresa conta com diversas filiais espalhadas pelo Brasil, garantindo uma<br/>operação eficiente e ágil, proporcionando um suporte de ponta aos seus clientes.<br/><br/><br/>Com um foco contínuo em inovação e qualidade, a Dark Lab, através da American<br/>Product, oferece suplementos que atendem às mais rigorosas normas do mercado,<br/>conquistando a confiança de milhares de consumidores em todo o país.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_miwzyY",
+        "text_MAGxza"
+      ],
+      "custom_css": [
+        ".scroll-trigger p{font-size: 1.7rem;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "expanded_width": true,
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "slideshow_Je7J8H",
+    "main",
+    "rich_text_CXeRWA"
+  ]
+}

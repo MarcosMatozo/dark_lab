@@ -1,0 +1,215 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_b9r4Nr": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_BmMVCC": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_BmMVCC"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "image_block_1": {
+          "type": "image_block",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "",
+            "block_position": 5,
+            "image_ratio": "normal",
+            "image_width": "large",
+            "subheading": "Subheading",
+            "heading": "Image block",
+            "button_label": "Button label",
+            "button_link": "",
+            "vertical_alignment": "bottom",
+            "horizontal_alignment": "left"
+          }
+        },
+        "image_block_2": {
+          "type": "image_block",
+          "settings": {
+            "color_scheme": "",
+            "block_position": 11,
+            "image_ratio": "normal",
+            "image_width": "small",
+            "subheading": "Subheading",
+            "heading": "Image block",
+            "button_label": "Button label",
+            "button_link": "",
+            "vertical_alignment": "middle",
+            "horizontal_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_1",
+        "image_block_2"
+      ],
+      "settings": {
+        "products_per_page": 9,
+        "products_per_row": 3,
+        "infinite_scroll": false,
+        "grid_color_scheme": "scheme-1",
+        "grid_style": "classic",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "show_color_swatches": true,
+        "grid_text_alignment": "center",
+        "enable_filtering": true,
+        "color_filter": true,
+        "enable_sorting": true,
+        "products_per_row_mobile": "2",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "collapse_content": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "color_scheme": "",
+            "title": "",
+            "link": "",
+            "description": ""
+          }
+        },
+        "featured_collection_2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "color_scheme": "",
+            "title": "",
+            "link": "",
+            "description": ""
+          }
+        },
+        "featured_collection_3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "color_scheme": "",
+            "title": "",
+            "link": "",
+            "description": ""
+          }
+        },
+        "featured_collection_4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "color_scheme": "",
+            "title": "",
+            "link": "",
+            "description": ""
+          }
+        },
+        "featured_collection_5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "color_scheme": "",
+            "title": "",
+            "link": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_1",
+        "featured_collection_2",
+        "featured_collection_3",
+        "featured_collection_4",
+        "featured_collection_5"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "",
+        "collections_per_row": 5,
+        "enable_slider_scrollbar": false,
+        "show_view_all": false,
+        "style": "simple",
+        "image_width": "medium",
+        "image_ratio": "original",
+        "custom_ratio": 1.8,
+        "title_size": "h5",
+        "grid_alignment": "center",
+        "show_product_count": false,
+        "collections_per_row_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "margin_top": 30,
+        "margin_bottom": 30
+      }
+    }
+  },
+  "order": [
+    "slideshow_b9r4Nr",
+    "product-grid",
+    "banner",
+    "collection_list"
+  ]
+}

@@ -1,0 +1,29 @@
+.totals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.totals .totals__total {
+    margin: 0;
+}
+
+.totals .totals__total-value {
+    margin: 0;
+}
+
+.totals * {
+  line-height: 1;
+}
+
+.totals > * + * {
+  margin-left: 2rem;
+}
+
+.totals__total {
+  margin-top: .5rem;
+}
+
+.cart__ctas + .totals {
+  margin-top: 2rem;
+}
+

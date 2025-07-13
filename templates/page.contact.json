@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "contact_form_Pqje3c": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Estamos ao seu dispor!",
+        "heading_size": "h2",
+        "description": "<p>Caso tenha alguma dúvida geral, relacionada a vendas ou à imprensa, informe-nos suas informações de contato abaixo. Entraremos em contato o mais breve possível para ajudar você.</p>",
+        "color_scheme": "",
+        "email": "contato@darklabsuplementos.com.br",
+        "phone": "+55 (11) 5043-8899",
+        "address": "<p>São Paulo - Brasil</p>",
+        "shop_time": "<p>Segunda a sexta, das 9h às 17h </p>",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "map": {
+      "type": "map",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "scheme-1",
+        "image_height": "small",
+        "api_key": "",
+        "grayscale": true,
+        "color_scheme_location": "",
+        "loaction_name": "Add location name here",
+        "location_heading_size": "h3",
+        "map_address": "Add your address here",
+        "address": "<p>Example hours:<br/>Mon - Fri, 10am - 9pm<br/>Saturday, 11am - 9pm<br/>Sunday, 11am - 5pm</p>",
+        "button_text": "Get directions",
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "contact_form_Pqje3c",
+    "main",
+    "map"
+  ]
+}

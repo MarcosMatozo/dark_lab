@@ -1,0 +1,372 @@
+{% comment %}
+  Blog Dark Lab - Seção personalizada para exibir posts do WordPress
+{% endcomment %}
+
+{{ 'blog-darklab.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.50 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.50 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- liquid
+  assign posts_to_display = 9
+  assign show_desktop_slider = false
+  if section.settings.enable_slider_scrollbar and posts_to_display > section.settings.posts_per_row
+    assign show_desktop_slider = true
+  endif
+  assign posts_per_row_mobile_int = section.settings.posts_per_row_mobile | plus: 0
+  assign show_mobile_slider = false
+  if section.settings.swipe_on_mobile and posts_to_display > posts_per_row_mobile_int
+    assign show_mobile_slider = true
+  endif
+-%}
+
+<div class="blog-darklab-section color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding">
+    
+    {% if section.settings.heading != blank %}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        <h2 class="title inline-richtext {{ section.settings.heading_size }} text-{{ section.settings.heading_alignment }}">
+          {{ section.settings.heading }}
+        </h2>
+      </div>
+    {% endif %}
+
+    <div class="blog-darklab-container" id="blog-darklab-posts">
+      <!-- Posts serão carregados aqui via JavaScript -->
+      <div class="blog-loading">
+        <p>Carregando posts...</p>
+      </div>
+      
+      <!-- Container do slider -->
+      <div class="component-view-all__btn marquee-scrolling__option" style="display: none;" id="blog-slider-wrapper">
+        <slider-component class="slider-mobile-gutter{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+          <ul
+            id="BlogSlider-{{ section.id }}"
+            class="blog-darklab-grid grid--{{ section.settings.posts_per_row }}-col-desktop grid--3-col-tablet grid--{{ section.settings.posts_per_row_mobile }}-col-tablet-down{% if show_desktop_slider and show_mobile_slider %} slider slider--everywhere slider--scrollbar{% elsif show_desktop_slider %} slider slider-desktop slider--scrollbar-desktop{% elsif show_mobile_slider %} slider slider--tablet slider-scrollbar-mobile{% endif %}{% if section.settings.show_view_all %} enabled-view__all{% endif %} product-list-9-items"
+            role="list"
+            aria-label="Blog posts slider"
+          >
+            <!-- Posts serão inseridos aqui via JavaScript -->
+          </ul>
+        </slider-component>
+        
+        <custom-scrollbar data-target-id="BlogSlider-{{ section.id }}" class="{% if show_desktop_slider == false and show_mobile_slider == false %}hidden{% elsif show_desktop_slider == false %}large-up-hide{% elsif show_mobile_slider == false %}small-hide{% endif %}"></custom-scrollbar>
+        
+        {%- if section.settings.show_view_all -%}
+          <div
+            class="center featured_collection__view-all{% if show_desktop_slider and show_mobile_slider %} view-btn-scrollbar-everywhere{% elsif show_desktop_slider %} view-btn-scrollbar-desktop{% elsif show_mobile_slider %} view-btn--scrollbar-mobile{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          >
+            <a
+              href="{{ section.settings.blog_url | default: 'https://blog.darklabsuplementos.com.br' }}"
+              class="button btn-view__all"
+              target="_blank"
+              aria-label="Ver todos os posts do blog"
+            >
+              {% render 'theme-icons', icon: 'top-arrow' %}
+              <span>Ver todos</span>
+            </a>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {% if section.settings.show_view_all %}
+      <!-- Botão movido para dentro do slider como seta -->
+    {% endif %}
+
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const blogContainer = document.getElementById('blog-darklab-posts');
+  
+  // URL usando proxy corsproxy  
+  const apiUrl = 'https://corsproxy.io/?' + encodeURIComponent('https://blog.darklabsuplementos.com.br/wp-json/wp/v2/posts?per_page=9&_embed');
+  
+  console.log('Carregando posts do blog...');
+  
+  fetch(apiUrl)
+    .then(response => {
+      console.log('Response status:', response.status);
+      return response.json();
+    })
+    .then(data => {
+      console.log('Corsproxy data:', data);
+      // Corsproxy retorna os dados diretamente
+      const posts = data;
+      console.log('Posts extraídos:', posts);
+      
+      // Esconder loading
+      const loadingDiv = blogContainer.querySelector('.blog-loading');
+      if (loadingDiv) loadingDiv.style.display = 'none';
+      
+      // Mostrar container do slider
+      const sliderWrapper = blogContainer.querySelector('#blog-slider-wrapper');
+      const sliderList = blogContainer.querySelector('#BlogSlider-{{ section.id }}');
+      
+      if (sliderWrapper && sliderList) {
+        sliderWrapper.style.display = 'block';
+        
+        posts.forEach((post, index) => {
+          const listItem = document.createElement('li');
+          listItem.id = `BlogSlide-{{ section.id }}-${index + 1}`;
+          listItem.className = 'grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}';
+          
+          const postCard = createPostCard(post);
+          listItem.appendChild(postCard);
+          sliderList.appendChild(listItem);
+        });
+        
+        // Forçar recálculo do slider após inserir o conteúdo
+        setTimeout(() => {
+          // Disparar evento de resize para recalcular o slider
+          window.dispatchEvent(new Event('resize'));
+          
+          // Tentar inicializar o slider manualmente se existir
+          const sliderComponent = sliderWrapper.querySelector('slider-component');
+          if (sliderComponent && typeof sliderComponent.calculateButtonVisibility === 'function') {
+            sliderComponent.calculateButtonVisibility();
+          }
+          
+          // Forçar recálculo do scrollbar
+          const scrollBar = sliderWrapper.querySelector('custom-scrollbar');
+          if (scrollBar && typeof scrollBar.update === 'function') {
+            scrollBar.update();
+          }
+          
+          // Solução adicional: forçar redraw do elemento
+          const slider = sliderWrapper.querySelector('.slider');
+          if (slider) {
+            slider.style.display = 'none';
+            slider.offsetHeight; // Força o browser a recalcular
+            slider.style.display = '';
+          }
+        }, 100);
+        
+        // Segunda tentativa após um tempo maior
+        setTimeout(() => {
+          window.dispatchEvent(new Event('resize'));
+        }, 500);
+      }
+    })
+    .catch(error => {
+      console.error('Erro ao carregar posts:', error);
+      blogContainer.innerHTML = '<p>Erro ao carregar posts do blog.</p>';
+    });
+
+  function createPostCard(post) {
+    const card = document.createElement('div');
+    card.className = 'blog-post-card';
+    
+    // Obter imagem destacada
+    let featuredImage = '';
+    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+      featuredImage = post._embedded['wp:featuredmedia'][0].source_url;
+    }
+    
+    // Obter categoria
+    let category = '';
+    if (post._embedded && post._embedded['wp:term'] && post._embedded['wp:term'][0] && post._embedded['wp:term'][0][0]) {
+      category = post._embedded['wp:term'][0][0].name;
+    }
+    
+    // Formatar data
+    const postDate = new Date(post.date);
+    const formattedDate = postDate.toLocaleDateString('pt-BR');
+    
+    // Obter autor
+    let author = '';
+    if (post._embedded && post._embedded.author && post._embedded.author[0]) {
+      author = post._embedded.author[0].name;
+    }
+    
+    card.innerHTML = `
+      <div class="blog-post-image">
+        ${featuredImage ? `<img src="${featuredImage}" alt="${post.title.rendered}" loading="lazy">` : ''}
+        ${category ? `<span class="blog-post-category">${category}</span>` : ''}
+      </div>
+      <div class="blog-post-content">
+        <div class="blog-post-meta">
+          ${author ? `<span class="blog-post-author">${author}</span>` : ''}
+          <span class="blog-post-date">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+              <g clip-path="url(#clip0_4473_11758)">
+                <path d="M12.6667 2.73218H3.33333C2.59695 2.73218 2 3.32913 2 4.06551V13.3988C2 14.1352 2.59695 14.7322 3.33333 14.7322H12.6667C13.403 14.7322 14 14.1352 14 13.3988V4.06551C14 3.32913 13.403 2.73218 12.6667 2.73218Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10.667 1.39868V4.06535" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M5.33301 1.39868V4.06535" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M2 6.73218H14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_4473_11758">
+                  <rect width="16" height="16" fill="white" transform="translate(0 0.0654297)"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+            ${formattedDate}
+        </span>
+        </div>
+        <h3 class="blog-post-title">
+          <a href="${post.link}" target="_blank">${post.title.rendered}</a>
+        </h3>
+        <p class="blog-post-excerpt">${post.excerpt.rendered.replace(/<[^>]*>/g, '').substring(0, 120)}...</p>
+        <a href="${post.link}" class="blog-post-link" target="_blank">Leia tudo</a>
+      </div>
+    `;
+    
+    return card;
+  }
+});
+</script>
+
+{% schema %}
+{
+  "name": "Blog Dark Lab",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "BLOG DARK LAB",
+      "label": "Título da seção"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Médio"
+        },
+        {
+          "value": "h1",
+          "label": "Grande"
+        }
+      ],
+      "default": "h2",
+      "label": "Tamanho do título"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Esquerda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Direita"
+        }
+      ],
+      "default": "center",
+      "label": "Alinhamento do título"
+    },
+    {
+      "type": "range",
+      "id": "posts_per_row",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3,
+      "label": "Posts por linha (desktop)"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider_scrollbar",
+      "label": "Ativar slider com scrollbar",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "posts_per_row_mobile",
+      "default": "1",
+      "label": "Posts por linha (mobile)",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": true,
+      "label": "Permitir deslizar no mobile"
+    },
+    {
+      "type": "text",
+      "id": "api_url",
+      "label": "URL da API do blog",
+      "default": "https://blog.darklabsuplementos.com.br/wp-json/wp/v2/posts?per_page=3&_embed",
+      "info": "URL da API do WordPress para buscar os posts"
+    },
+    {
+      "type": "text",
+      "id": "blog_url",
+      "label": "URL do blog",
+      "default": "https://blog.darklabsuplementos.com.br",
+      "info": "URL principal do blog para o botão 'Ver todos'"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "default": true,
+      "label": "Mostrar botão 'Ver todos'"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Esquema de cores",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espaçamento superior",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Espaçamento inferior",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Dark Lab"
+    }
+  ]
+}
+{% endschema %}

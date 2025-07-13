@@ -1,0 +1,103 @@
+.predictive-search {
+  display: none;
+} 
+.theme-modal-popup {
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translatex(-50%);
+  z-index: 5;
+  padding: 3rem;
+  border-radius: var(--radius-20);
+  text-align: center;
+  visibility: hidden;
+  max-width: 70rem;
+  background-color: rgb(var(--color-background));
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out
+}
+.theme-modal-popup:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+.theme-modal-popup_inner {
+  display: grid;
+  gap: 3rem;
+  max-height: calc(100vh - 12rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 1.5rem;
+  margin-right: -1.5rem;
+}
+.btn-modal-popup__trigger {
+  position: absolute;
+  top: -2.2rem;
+  right: -2.2rem;
+}
+.theme-modal-popup.active {
+  bottom: 3rem;
+  visibility: visible;
+}
+.theme-modal-popup__overlay:empty {
+  display: block;
+}
+.theme-modal-popup__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  z-index: 2;
+  visibility: hidden;
+  opacity: 0;
+}
+.theme-modal-popup__overlay.active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 4;
+}
+.modal-popup__buttons,
+.modal-content .field-with-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1px;
+}
+.modal-content .newsletter-form__field-wrapper {
+  max-width: 100%;
+}
+.modal-image .media {
+  border-radius: var(--radius-20);
+}
+
+@media screen and (max-width: 749px) {
+  .theme-modal-popup {
+    width: calc(100% - 3rem);
+  }
+  .modal-popup__buttons,
+  .modal-content .field-with-button {
+    gap: 1rem;
+  }
+  .modal-image .media,
+  .theme-modal-popup {
+    border-radius: var(--radius-10);
+  }
+  .theme-modal-popup_inner {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .theme-modal-popup_inner {
+    max-height: calc(100vh - 12rem);
+  }
+  .theme-modal-popup.active {
+    bottom: 1.5rem;
+  }
+  .btn-modal-popup__trigger {
+    right: 0px;
+  }
+}

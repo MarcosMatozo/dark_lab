@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-search",
+      "settings": {
+        "columns_desktop": 3,
+        "grid_color_scheme": "",
+        "grid_style": "simple",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "grid_text_alignment": "center",
+        "columns_mobile": "2",
+        "enable_filtering": true,
+        "color_filter": true,
+        "enable_sorting": true,
+        "color_scheme_blog": "",
+        "image_ratios": "original",
+        "custom_ratio": 2.2,
+        "image_second": false,
+        "show_date": true,
+        "show_author": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "text_columns_with_icons": {
+      "type": "text-columns-with-icons",
+      "blocks": {
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-bag",
+            "title": "Column",
+            "text": "<p>Include a description of the icon, explaining its significance and function.</p>"
+          }
+        },
+        "column_2": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-chat",
+            "title": "Column",
+            "text": "<p>Include a description of the icon, explaining its significance and function.</p>"
+          }
+        },
+        "column_3": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-clock-svg",
+            "title": "Column",
+            "text": "<p>Include a description of the icon, explaining its significance and function.</p>"
+          }
+        },
+        "column_4": {
+          "type": "column",
+          "settings": {
+            "color_scheme": "",
+            "icon": "icon-comment",
+            "title": "Column",
+            "text": "<p>Include a description of the icon, explaining its significance and function.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_1",
+        "column_2",
+        "column_3",
+        "column_4"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "",
+        "style": "simple",
+        "column_per_row": 4,
+        "title_size": "h5",
+        "text_alignment": "center",
+        "column_per_row_mobile": "2",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "main",
+    "text_columns_with_icons"
+  ]
+}

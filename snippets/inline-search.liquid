@@ -1,0 +1,93 @@
+{%- if settings.predictive_search_enabled -%}
+  <predictive-search class="search-modal__form{% if settings.suggestions_menu != blank %} custom-suggestions--enabled{% endif %}" data-loading-text="{{ 'accessibility.loading' | t }}">
+{%- else -%}
+  <search-form class="search-modal__form">
+{%- endif -%}
+<form
+  action="{{ routes.search_url }}"
+  method="get"
+  role="search"
+  class="search search-modal__form inline-search-modal__form"
+>
+  <div class="field">
+    <input
+      class="search__input field__input"
+      id="{{ input_id }}"
+      type="search"
+      name="q"
+      value="{{ search.terms | escape }}"
+      placeholder="{{ 'general.search.search' | t }}"
+      {%- if settings.predictive_search_enabled -%}
+        role="combobox"
+        aria-expanded="false"
+        aria-owns="predictive-search-results"
+        aria-controls="predictive-search-results"
+        aria-haspopup="listbox"
+        aria-autocomplete="list"
+        autocorrect="off"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+      {%- endif -%}
+    >
+    <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+    <input type="hidden" name="options[prefix]" value="last">
+    <button
+      type="reset"
+      class="reset__button field__button{% if search.terms == blank %} hidden{% endif %}"
+      aria-label="{{ 'general.search.reset' | t }}"
+    >
+      <svg class="icon icon-close" aria-hidden="true" focusable="false">
+        <use xlink:href="#icon-reset">
+      </svg>
+    </button>
+    <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+      {% render 'theme-icons', icon: 'search' %}
+    </button>
+  </div>
+
+  {%- if settings.predictive_search_enabled -%}
+    <div class="predictive-search predictive-search--header overflow-scrollbar{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" tabindex="-1" data-predictive-search>
+      {%- render 'theme-icons', icon: 'loader', class: 'predictive-search__loading-state' -%}
+      {% if settings.suggestions_menu != blank %}
+        <div class="predictive-search__result-group custom-suggestions">
+          <div>
+            <h2 id="predictive-search-custom-queries" class="predictive-search__heading h5">
+              {{ settings.suggestions_heading | escape }}
+            </h2>
+            <ul
+              id="predictive-search-custom-queries-list"
+              class="predictive-search__results-list list-unstyled"
+              role="group"
+              aria-labelledby="predictive-search-custom-queries"
+            >
+              {%- for link in linklists[settings.suggestions_menu].links -%}
+                <li
+                  id="predictive-search-option-query-{{ forloop.index }}"
+                  class="predictive-search__list-item"
+                  role="option"
+                  aria-selected="false"
+                >
+                  <a
+                    href="{{ link.url }}"
+                    class="predictive-search__item header__menu-button link link--text"
+                    tabindex="-1"
+                  >
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+  {%- endif -%}
+</form>
+{%- if settings.predictive_search_enabled -%}
+  </predictive-search>
+{%- else -%}
+  </search-form>
+{%- endif -%}

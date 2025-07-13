@@ -1,0 +1,8 @@
+select#SortBy {
+  background-color: #000;
+  color: #fff;
+}
+select#SortBy:focus {
+  color: #fff;
+  background-color: #000;
+}

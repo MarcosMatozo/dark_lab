@@ -1,0 +1,55 @@
+<grid-color-swatches class="product-color__grid{% if grid_text_alignment %} justify-{{ grid_text_alignment }}{% endif %}">
+  {% for option in card_product.options_with_values %}
+    {% liquid 
+      assign option_name =  option.name | downcase
+      assign swatch_option_key = 'option' | append: forloop.index
+      assign variant_id = ''
+    %}
+    {% if option_name == 'color' or option_name == 'colour' %}
+        {% liquid 
+          assign counter = 0
+        %}
+        {% for value in option.values %}
+          {% liquid 
+            assign counter = counter | plus: 1 
+          %}
+          {% if counter > 4 %}
+            <div class="color-swatch__list color-more">
+              <a href="{{ card_product.url }}" aria-label="view-card_product">
+                {% render 'theme-icons', icon: 'plus' %}
+              </a>
+            </div>
+            {% break %}
+          {% endif %}
+          {% liquid
+            assign color_file_name = value | handle | append: '.png'
+            assign color_image = color_file_name | file_img_url: '60x30' | prepend: 'https:' | split: '?' | first
+
+            assign swatch_image = ''
+            assign swatch_color = ''
+
+            if value.swatch.image
+              assign image_url = value.swatch.image | image_url: width: 60
+              assign swatch_image = 'url(' | append: image_url | append: ')'
+            endif
+            if value.swatch.color
+              assign swatch_color = 'rgb(' | append: value.swatch.color.rgb | append: ')'
+            endif
+
+            assign swatch_value_downcased = value | downcase
+            for variant in card_product.variants
+              assign option_value_downcased = variant[swatch_option_key] | downcase
+              if option_value_downcased == swatch_value_downcased
+                assign variant_id = variant.id
+                break
+              endif
+            endfor
+          -%}
+          <div class="swatch-list">
+            <input type="radio" class="color-swatch__radio" data-image-element="image-{{ section.id }}__{{ card_product.id }}" data-product-handle={{ card_product.handle }} data-variant-id="{{ variant_id }}" name="color-swatch__{{ section.id }}-{{ card_product.id }}" id="color-swatch__{{ value | handleize }}-{{ section.id }}-{{ card_product.id }}">
+            <label for="color-swatch__{{ value | handleize }}-{{ section.id }}-{{ card_product.id }}" title="{{ value }}" class="color-swatch__item" style="background-color: {% if swatch_color != blank %}{{ swatch_color }}{% else %}{{ value | handleize }}{% endif %}; background-image:{% if swatch_image != blank %}{{ swatch_image }}{% elsif images[color_file_name] != blank %}url({{ color_image }}){% endif %};"><span class="hidden">{{ value | downcase }}</span></label>
+          </div>
+        {% endfor %}
+    {% endif %}
+  {% endfor %}
+</grid-color-swatches>

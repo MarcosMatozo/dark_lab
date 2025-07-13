@@ -1,0 +1,687 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_DESKTOP_CREATINA.png",
+            "mobile_image": "shopify://shop_images/BANNER_MOBILE_CREATINA.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_ww9zm3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_DESKTOP_CREATINA.png",
+            "mobile_image": "shopify://shop_images/BANNER_MOBILE_CREATINA.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_1",
+        "slide_ww9zm3"
+      ],
+      "settings": {
+        "expanded_width": true,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "blocks": {
+        "featured_collection": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "whey-protein",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection"
+      ],
+      "settings": {
+        "title": "MAIS VENDIDOS",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "color_scheme": "scheme-22eccc38-a022-405a-8f47-43de3838b02e",
+        "products_to_show": 8,
+        "products_per_row": 4,
+        "enable_slider_scrollbar": true,
+        "show_view_all": true,
+        "grid_color_scheme": "scheme-2",
+        "grid_style": "classic",
+        "image_ratio": "original",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "show_color_swatches": false,
+        "grid_text_alignment": "center",
+        "products_per_row_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 60
+      }
+    },
+    "textos_icones_7wkhUM": {
+      "type": "textos-icones",
+      "blocks": {
+        "icon_item_DMpeRm": {
+          "type": "icon_item",
+          "settings": {
+            "icon_image": "shopify://shop_images/Icon_3.svg",
+            "title": "Entrega Rápida",
+            "text": "Para todo o país"
+          }
+        },
+        "icon_item_jx3Ygn": {
+          "type": "icon_item",
+          "settings": {
+            "icon_image": "shopify://shop_images/desconto.svg",
+            "title": "Até 5% Off",
+            "text": "Para pagamentos via PIX"
+          }
+        },
+        "icon_item_xM79HV": {
+          "type": "icon_item",
+          "settings": {
+            "icon_image": "shopify://shop_images/cadeado.svg",
+            "title": "Sua compra segura",
+            "text": "Com o Mercado Pago"
+          }
+        },
+        "icon_item_ayJK6m": {
+          "type": "icon_item",
+          "settings": {
+            "icon_image": "shopify://shop_images/chat.svg",
+            "title": "Atendimento exclusivo",
+            "text": "Contato personalizado"
+          }
+        }
+      },
+      "block_order": [
+        "icon_item_DMpeRm",
+        "icon_item_jx3Ygn",
+        "icon_item_xM79HV",
+        "icon_item_ayJK6m"
+      ],
+      "name": "Ícones Personalizados",
+      "settings": {
+        "title": "",
+        "padding_top": 15,
+        "padding_bottom": 15
+      }
+    },
+    "image_with_text_4GTkcJ": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_N8dT3C": {
+          "type": "heading",
+          "settings": {
+            "subheading": "MELHOR WHEY DO MERCADO",
+            "heading": "CONHEÇA O WHEY DA DARK LAB",
+            "heading_size": "h2"
+          }
+        },
+        "text_LNxRrD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A COMBINAÇÃO PERFEITA ENTRE PROTEÍNA E SABOR! CLIQUE NO BOTÃO ABAIXO PARA SER REDIRECIONADOPARA A PÁGINA DO PRODUTO.<br/><br/></p>"
+          }
+        },
+        "button_J7jEaz": {
+          "type": "button",
+          "settings": {
+            "button_label": "VER PRODUTO",
+            "button_link": "shopify://collections/whey-protein",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_N8dT3C",
+        "text_LNxRrD",
+        "button_J7jEaz"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "section_color_scheme": "scheme-22eccc38-a022-405a-8f47-43de3838b02e",
+        "image": "shopify://shop_images/431.webp",
+        "image_position_right": false,
+        "height": "original",
+        "inverter_cores": true,
+        "color_scheme": "scheme-3",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "right",
+        "image_animation": true,
+        "mobile_content_alignment": "right",
+        "padding_top": 62,
+        "padding_bottom": 62
+      }
+    },
+    "slideshow_kcANhN": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_Xx36DL": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Image-1-hover.png",
+            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_Xx36DL"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "slideshow_QTpDzA": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_W9eizH": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Image-1-hover.png",
+            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_W9eizH"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "custom_liquid_aeyPVU": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "page_width": true,
+        "custom_liquid": "",
+        "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
+    "slideshow_BjJhkM": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_eaBVNQ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Image-1-hover.png",
+            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_eaBVNQ"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "massa-muscular",
+            "color_scheme": "scheme-3",
+            "image": "shopify://shop_images/Image.png",
+            "title": "Massa Muscular",
+            "link": "shopify://collections/massa-muscular",
+            "description": ""
+          }
+        },
+        "featured_collection_2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "saude",
+            "color_scheme": "scheme-3",
+            "title": "",
+            "link": "shopify://collections/saude",
+            "description": ""
+          }
+        },
+        "featured_collection_3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "performance",
+            "color_scheme": "scheme-3",
+            "title": "",
+            "link": "shopify://collections/performance",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_1",
+        "featured_collection_2",
+        "featured_collection_3"
+      ],
+      "custom_css": [],
+      "settings": {
+        "title": "Compre por objetivo",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "scheme-3",
+        "collections_per_row": 3,
+        "enable_slider_scrollbar": false,
+        "show_view_all": false,
+        "style": "simple",
+        "image_width": "large",
+        "image_ratio": "original",
+        "custom_ratio": 1,
+        "title_size": "h5",
+        "grid_alignment": "left",
+        "show_product_count": true,
+        "collections_per_row_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "margin_top": 30,
+        "margin_bottom": 30
+      }
+    },
+    "blog_darklab_custom": {
+      "type": "blog-darklab",
+      "settings": {
+        "heading": "BLOG DARK LAB",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "posts_per_row": 3,
+        "enable_slider_scrollbar": true,
+        "posts_per_row_mobile": "1",
+        "swipe_on_mobile": true,
+        "api_url": "https://blog.darklabsuplementos.com.br/wp-json/wp/v2/posts?per_page=9&_embed",
+        "blog_url": "https://blog.darklabsuplementos.com.br",
+        "show_view_all": true,
+        "color_scheme": "scheme-3",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "logo_list_zKbmzw": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_hcGyyJ": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main-button.svg",
+            "title": "",
+            "link": "shopify://pages/quem-somos"
+          }
+        },
+        "logo_WUR4Fn": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main-button_1.svg",
+            "title": "",
+            "link": "shopify://pages/contact"
+          }
+        },
+        "logo_qMF6HM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main-button_2.svg",
+            "title": "",
+            "link": "shopify://blogs/news"
+          }
+        },
+        "logo_U8iL9w": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Main-button_3.svg",
+            "title": "",
+            "link": "shopify://pages/politica-de-privacidade"
+          }
+        }
+      },
+      "block_order": [
+        "logo_hcGyyJ",
+        "logo_WUR4Fn",
+        "logo_qMF6HM",
+        "logo_U8iL9w"
+      ],
+      "name": "t:sections.logo-list.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "scheme-22eccc38-a022-405a-8f47-43de3838b02e",
+        "logo_per_row": 4,
+        "enable_slider_scrollbar": false,
+        "image_ratio": "original",
+        "title_size": "h6",
+        "text_alignment": "center",
+        "logo_per_row_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "reviews_geJD4g": {
+      "type": "reviews",
+      "blocks": {
+        "avaliacao_KQ7nhK": {
+          "type": "avaliacao",
+          "settings": {
+            "person_name": "JOSÉ DA SILVA",
+            "review_date": "10/01/2024",
+            "review_description": "Loja muito boa, muito confiável.\nFiz meu pedido e chegou bem rápido",
+            "amount_stars": 5
+          }
+        },
+        "avaliacao_BAnFpi": {
+          "type": "avaliacao",
+          "settings": {
+            "person_name": "JOSÉ DA SILVA",
+            "review_date": "10/01/2024",
+            "review_description": "Loja muito boa, muito confiável.\nFiz meu pedido e chegou bem rápido",
+            "amount_stars": 5
+          }
+        },
+        "avaliacao_X6R4zk": {
+          "type": "avaliacao",
+          "settings": {
+            "person_name": "JOSÉ DA SILVA",
+            "review_date": "10/01/2024",
+            "review_description": "Loja muito boa, muito confiável.\nFiz meu pedido e chegou bem rápido",
+            "amount_stars": 5
+          }
+        },
+        "avaliacao_eD6D3n": {
+          "type": "avaliacao",
+          "settings": {
+            "person_name": "JOSÉ DA SILVA",
+            "review_date": "10/01/2024",
+            "review_description": "Loja muito boa, muito confiável.\nFiz meu pedido e chegou bem rápido",
+            "amount_stars": 5
+          }
+        },
+        "avaliacao_PJXewF": {
+          "type": "avaliacao",
+          "settings": {
+            "person_name": "JOSÉ DA SILVA",
+            "review_date": "10/01/2024",
+            "review_description": "Loja muito boa, muito confiável.\nFiz meu pedido e chegou bem rápido",
+            "amount_stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "avaliacao_KQ7nhK",
+        "avaliacao_BAnFpi",
+        "avaliacao_X6R4zk",
+        "avaliacao_eD6D3n",
+        "avaliacao_PJXewF"
+      ],
+      "name": "Lista de avaliação",
+      "settings": {
+        "title": "VEJA O QUE FALAM DA NOSSA LOJA",
+        "autoplay": true,
+        "cycle_speed": 4,
+        "show_dots": true,
+        "espaco_acima": 12,
+        "espaco_abaixo": 12
+      }
+    },
+    "image_gallery": {
+      "type": "image-gallery",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "title": "@darklabsuplementos",
+            "title_size": "h5",
+            "description": "<p>Nos siga</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "image_1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AnyConv.com__Image_2.webp",
+            "link": ""
+          }
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AnyConv.com__Image_3.webp",
+            "link": ""
+          }
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AnyConv.com__Image_4.webp",
+            "link": ""
+          }
+        },
+        "image_4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AnyConv.com__Image_5.webp",
+            "link": ""
+          }
+        },
+        "image_5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/AnyConv.com__Image_6.webp",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h3",
+        "heading_alignment": "left",
+        "color_scheme": "scheme-3",
+        "inverter_cores": true,
+        "column_per_row": 6,
+        "enable_slider_scrollbar": false,
+        "image_ratio": "original",
+        "circular_style": false,
+        "hover_effect": true,
+        "column_per_row_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 30,
+        "margin_bottom": 30
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Cadastre-se em nossa newsletter",
+            "heading_size": "h2"
+          }
+        },
+        "paragraph": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Quer receber nossas ofertas? Cadastre-se e comece a recebê-las!<br/><br/></p>"
+          }
+        },
+        "email_form": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "paragraph",
+        "email_form"
+      ],
+      "settings": {
+        "expanded_width": false,
+        "text_alignment": "left",
+        "color_scheme": "scheme-3",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "custom_liquid_U8t7zP": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "page_width": true,
+        "custom_liquid": "",
+        "color_scheme": "scheme-22eccc38-a022-405a-8f47-43de3838b02e",
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "featured_collection",
+    "textos_icones_7wkhUM",
+    "image_with_text_4GTkcJ",
+    "slideshow_kcANhN",
+    "slideshow_QTpDzA",
+    "custom_liquid_aeyPVU",
+    "slideshow_BjJhkM",
+    "collection_list",
+    "blog_darklab_custom",
+    "logo_list_zKbmzw",
+    "reviews_geJD4g",
+    "image_gallery",
+    "newsletter",
+    "custom_liquid_U8t7zP"
+  ]
+}

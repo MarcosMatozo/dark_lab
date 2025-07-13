@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "watch": "gulp",
+    "shopify": "shopify theme dev -t 135310213326 --store totvscuritiba-darklabsuplementos-dc",
+    "download": "shopify theme pull -t 135310213326 --store totvscuritiba-darklabsuplementos-dc",
+    "pushdev": "shopify theme push -t 135310213326",
+    "dev": "concurrently \"npm run shopify\" \"npm run watch\" "
+  },
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "sass": "^1.86.0"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "gulp-sass": "^6.0.1"
+  }
+}

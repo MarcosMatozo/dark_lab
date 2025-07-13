@@ -1,0 +1,400 @@
+{{ 'masonry-grid.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.50 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.50 | round: 0 }}px;
+  }
+  @media screen and (min-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+ 
+<div class="color-{{ section.settings.color_scheme }} gradient isolate">
+  <div class="page-width section-{{ section.id }}-padding">
+    {%- unless section.settings.title == blank -%}
+      <div class="section-heading__bar sp-small mgb-medium text-{{ section.settings.heading_alignment }}">
+        <h2 class="title {{ section.settings.heading_size }}">
+          {{ section.settings.title }}
+        </h2>
+    </div>
+    {%- endunless -%}
+    <div class="masonry-grid masonry-grid-items-{{ section.blocks.size }} marquee-scrolling__option" data-scrolling="true">
+      {%- for block in section.blocks -%}
+        {% liquid
+          assign image_height = block.settings.image_height | times: 1
+        %}
+        <div
+          class="masonry-grid__item  masonry-grid__item--{{ block.type }} masonry-grid__item--{% if forloop.index > 3 %}right{% else %}left{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          {%- case block.type -%}
+            {%- when 'image' -%}
+              <div class="masonry-grid-card product-card-wrapper">
+                <div
+                  class="media media--transparent ratio"
+                  {% if block.settings.image != blank and image_height == 100 %}
+                    style="--ratio-percent: {{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100 }}%"
+                  {% else %}
+                    style="--ratio-percent: {{ image_height }}%"
+                  {% endif %}
+                >
+                  {%- if block.settings.image != blank -%}
+                    {%- liquid
+                      assign large_block = forloop.first
+                      if forloop.index > 3 and forloop.last
+                       assign large_block = forloop.last
+                      endif
+                      assign grid_space_desktop = settings.spacing_grid_horizontal | divided_by: 2 | append: 'px'
+                      assign grid_space_mobile = settings.spacing_grid_horizontal | divided_by: 4 | append: 'px'
+                    -%}
+                    {%- if large_block -%}
+                      {%- capture sizes -%}
+                        {% if section.blocks.size == 1 -%}(min-width: {{ settings.page_width }}px) calc({{ settings.page_width }}px - 100px){% else %}(min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 2 / 3 - {{ grid_space_desktop }}){% endif %},
+                        {% if section.blocks.size == 1 -%}(min-width: 750px) calc(100vw - 100px){% else %}(min-width: 750px) calc((100vw - 100px) * 2 / 3 - {{ grid_space_desktop }}){% endif %},
+                        {% if section.blocks.size == 2 -%}calc((100vw - 30px) / 2){% endif %}
+                        {%- endcapture -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 3200
+                        | image_tag:
+                          sizes: sizes,
+                          widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                      }}
+                    {%- else -%}
+                      {%- capture sizes -%}
+                           (min-width: {{ settings.page_width }}px) calc(({{ settings.page_width }}px - 100px) * 1 / 3 - {{ grid_space_desktop }}),
+                           (min-width: 750px) calc((100vw - 100px) * 1 / 3 - {{ grid_space_desktop }}),
+                           calc((100vw - 30px) / 2 - {{ grid_space_mobile }})
+                        {%- endcapture -%}
+                      {{
+                        block.settings.image
+                        | image_url: width: 3200
+                        | image_tag:
+                          sizes: sizes,
+                          widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200'
+                      }}
+                    {%- endif -%}
+                  {%- else -%}
+                    {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+                  {%- endif -%}
+                  {% if block.settings.button_link != blank and block.settings.button_label == blank %}
+                    <a
+                      href="{{ block.settings.button_link }}"
+                      class="masonry-banner-overlay__link" aria-label="masonry-overlay-link" tabindex="-1">
+                       <span class="hidden">{{- block.settings.button_label | escape -}}</span>
+                    </a>
+                  {% endif %}
+                </div>
+                <div class="text-content-wrapper text-alignment__{{ block.settings.text_alignment }} color-{{ block.settings.color_scheme }}{% if block.settings.scrolling_text != blank %} with-scrolling-text{% endif %} overflow-scrollbar">
+                  <div class="sp-small text-{{ block.settings.text_alignment }}">
+                    {% if block.settings.subheading != blank %}
+                      <span class="subheading bold">{{ block.settings.subheading }}</span>
+                    {% endif %}
+                    {% if block.settings.title != blank %}
+                      <h2 class="inline-richtext heading {{ block.settings.heading_size }}">{{ block.settings.title }}</h2>
+                    {% endif %}
+                    {% if block.settings.description != blank %}
+                      <div class="rte">
+                        {{ block.settings.description }}
+                      </div>
+                    {% endif %}
+                    {%- if block.settings.button_label != blank -%}
+                      <div class="cta-button">
+                        <a
+                          class="button button--{{ block.settings.button_style }}"
+                          {% if block.settings.button_link == blank %}
+                            role="link" aria-disabled="true"
+                          {% else %}
+                            href="{{ block.settings.button_link }}"
+                          {% endif %}
+                        >
+                          {{- block.settings.button_label | escape -}}
+                        </a>
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+                {% if block.settings.scrolling_text != blank %}
+                   <div class="masonry-scrolling-text marquee3k color-{{ block.settings.scrolling_color_scheme }}" data-speed=".50" data-pausable="t">
+                     <div class="masonry-scrolling-text-inner">
+                       {{ block.settings.scrolling_text }}
+                     </div>
+                   </div>
+                {% endif %}
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.masonry-grid.name",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": [
+      "header",
+      "footer",
+      "custom.popups"
+    ]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "t:sections.masonry-grid.settings.heading.default",
+      "label": "t:sections.all.heading.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h3",
+          "label": "t:sections.all.heading_size.options__3.label"
+        },
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__4.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__5.label"
+        }
+      ],
+      "default": "h2",
+      "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.all.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.all.heading_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.all.heading_alignment.options__3.label"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.all.heading_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.layout.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-3"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_spacing.content",
+      "info": "t:sections.all.section_spacing.info"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.section_spacing.above",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.section_spacing.below",
+      "default": 100
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.masonry-grid.blocks.image.name",
+      "settings": [
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-1",
+          "info": "t:sections.masonry-grid.blocks.image.settings.color_scheme.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.masonry-grid.blocks.image.settings.image.label"
+        },
+        {
+          "type": "range",
+          "id": "image_height",
+          "min": 50,
+          "max": 150,
+          "step": 5,
+          "unit": "%",
+          "label": "t:sections.masonry-grid.blocks.image.settings.image_height.label",
+          "default": 65,
+          "info": "t:sections.masonry-grid.blocks.image.settings.image_height.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.masonry-grid.blocks.image.settings.header__1.content"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "t:sections.masonry-grid.blocks.image.settings.subheading.label",
+          "default": "t:sections.masonry-grid.blocks.image.settings.subheading.default"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "default": "t:sections.masonry-grid.blocks.image.settings.heading.default",
+          "label": "t:sections.all.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h4",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "h3",
+              "label": "t:sections.all.heading_size.options__3.label"
+            },
+            {
+              "value": "h2",
+              "label": "t:sections.all.heading_size.options__4.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.all.heading_size.options__5.label"
+            }
+          ],
+          "default": "h2",
+          "label": "t:sections.all.heading_size.label"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "t:sections.all.description.label",
+           "default":"t:sections.masonry-grid.blocks.image.settings.description.default"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:sections.masonry-grid.blocks.image.settings.button_label.label",
+          "default": "t:sections.masonry-grid.blocks.image.settings.button_label.default"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:sections.masonry-grid.blocks.image.settings.button_link.label"
+        },
+        {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.all.button_style.options__1.label"
+            },
+            {
+              "value": "secondary",
+              "label": "t:sections.all.button_style.options__2.label"
+            },
+            {
+              "value": "outline",
+              "label": "t:sections.all.button_style.options__3.label"
+            }
+          ],
+          "default": "primary",
+          "label": "t:sections.all.button_style.label"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.all.heading_alignment.options__1.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.all.heading_alignment.options__2.label"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.all.heading_alignment.options__3.label"
+            }
+          ],
+          "default": "center",
+          "label": "t:sections.masonry-grid.blocks.image.settings.text_alignment.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.masonry-grid.blocks.image.settings.header__2.content"
+        },
+        {
+          "type": "color_scheme",
+          "id": "scrolling_color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-1"
+        },
+        {
+          "type": "text",
+          "id": "scrolling_text",
+          "label": "t:sections.masonry-grid.blocks.image.settings.text.label"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "t:sections.masonry-grid.presets.name",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,176 @@
+.masonry-grid {
+  display: grid;
+}
+
+.masonry-grid__item > * {
+  width: 100%;
+}
+.masonry-banner-overlay__link {
+  z-index: 1;
+}
+.masonry-grid-card .text-content-wrapper {
+  position: absolute;
+  top: 50%;
+  width: calc(100% - 6rem);
+  left: 50%;
+  background: transparent;
+  overflow: auto;
+  display: grid;
+  align-items: center;
+  height: 100%;
+  max-height: calc(100% - 4rem);
+  transform: translate(calc(-50% + 1rem),-50%);
+  padding-right: 1rem;
+}
+.masonry-scrolling-text {
+  padding: 1rem;
+  position: absolute;
+  width: calc(100% - 3rem);
+  overflow: hidden;
+  font-size: 14px;
+  border-radius: var(--radius-10);
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translate(-50%);
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+.text-content-wrapper.with-scrolling-text {
+  max-height: calc(100% - 10rem);
+  overflow: auto;
+  top: calc(50% - 3rem);
+}
+.masonry-grid__item .card__content {
+  flex-grow: initial;
+}
+.masonry-scrolling-text-inner {
+  padding: .25rem;
+}
+@media screen and (max-width: 749px) {
+  .masonry-grid {
+    grid-column-gap: var(--grid-mobile-horizontal-spacing);
+    grid-row-gap: var(--grid-mobile-vertical-spacing);
+  }
+  .masonry-grid-card .ratio:before {
+    content: "";
+    width: 0;
+    height: 0;
+    padding-bottom: 100%;
+  }
+}
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .masonry-grid {
+    grid-column-gap: var(--grid-desktop-horizontal-spacing);
+    grid-row-gap: var(--grid-desktop-vertical-spacing);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .masonry-grid {
+    grid-auto-flow: column;
+    grid-column-gap: var(--grid-desktop-horizontal-spacing);
+    grid-row-gap: var(--grid-desktop-vertical-spacing);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .masonry-grid__item--left:nth-child(3n - 2) {
+    grid-column: 1 / span 2;
+    grid-row: span 2;
+  }
+
+  .masonry-grid__item--left:nth-child(3n - 2):last-child {
+    grid-column: 1 / span 3;
+  }
+
+  .masonry-grid__item--left:nth-child(3n - 1),
+  .masonry-grid__item--left:nth-child(3n) {
+    grid-column-start: 3;
+  }
+
+  .masonry-grid__item--left:nth-child(3n - 1):last-child {
+    grid-row: span 2;
+  }
+
+  .masonry-grid__item--right:nth-child(3n - 2) {
+    grid-column: 1 / span 1;
+    grid-row: span 1;
+  }
+
+  .masonry-grid__item--right:nth-child(3n - 2):last-child {
+    grid-column: 1 / span 3;
+  }
+
+  .masonry-grid__item--right:nth-child(3n - 1) {
+    grid-column-start: 1;
+  }
+
+  .masonry-grid__item--right:nth-child(3n-1):last-child {
+    grid-column: span 2;
+  }
+
+  .masonry-grid__item--right:nth-child(3n) {
+    grid-column: 2 / span 2;
+    grid-row: span 2;
+  }
+
+  .masonry-grid__item--collection:only-child,
+  .masonry-grid__item--product:only-child {
+    justify-self: center;
+    max-width: 73rem;
+    width: 100%;
+  }
+}
+
+.masonry-grid-card {
+  height: 100%;
+  position: relative;
+  border-radius: var(--radius-20);
+  border: 0px solid rgba(var(--color-foreground), 0.5);
+  padding: var(--image-padding);
+}
+
+/* Needed for gradient continuity with or without animation, background-attachment: local scopes the gradient to its container which happens automatically when a transform is applied (animation on scroll) */
+.masonry-grid-card.gradient {
+  transform: perspective(0);
+}
+
+.masonry-grid-card:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: var(--radius-20);
+  box-shadow: 0px 4px 5px
+    rgba(var(--color-shadow), 0);
+  width: calc(0px * 2 + 100%);
+  height: calc(0px * 2 + 100%);
+  top: calc(0px * -1);
+  left: calc(0px * -1);
+}
+
+
+.masonry-grid-card .media {
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-20);
+}
+
+.masonry-grid-card .deferred-media {
+  height: 100%;
+  overflow: visible;
+}
+
+.masonry-grid-card__link {
+  display: block;
+  height: 100%;
+}
+@media screen and (max-width: 749px) {
+  .masonry-grid-card:after,
+  .masonry-grid-card .media,
+  .masonry-grid-card {
+    border-radius: var(--radius-10);
+  }
+  .masonry-grid-card .text-content-wrapper {
+    width: calc(100% - 1.5rem);
+  }
+}

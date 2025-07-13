@@ -1,0 +1,30 @@
+.breadcrumb-divider {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb {
+  display: flex;
+  padding: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  align-self: stretch;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), .08);
+}
+
+.breadcrumb-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: currentColor;
+  min-height: 24px;
+}
+
+@media screen and (max-width: 749px) {
+  .breadcrumb {
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,88 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "pagefly_section_WWBnPa": {
+      "type": "pagefly-section",
+      "name": "PageFly Section",
+      "settings": {
+        "section_id": "pf-66289378"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "footer-0": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "footer-1": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "footer"
+          }
+        },
+        "footer-2": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "heading": "Our mission",
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+          }
+        },
+        "footer-3": {
+          "type": "connectivity",
+          "disabled": true,
+          "settings": {
+            "heading": "Connectivity",
+            "newsletter_enable": false,
+            "show_social": false,
+            "show_payment_icons": true,
+            "enable_language_selector": true,
+            "enable_country_selector": true,
+            "enable_country_flags": true,
+            "enable_country_name": false
+          }
+        }
+      },
+      "block_order": [
+        "footer-0",
+        "footer-1",
+        "footer-2",
+        "footer-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "divider_line": false,
+        "color_scheme": "",
+        "contact_info": "",
+        "badge_width": 50,
+        "outside_rotate_text": "Circle rotating text! Circle rotating text! Circle rotating text!",
+        "copyright_text": "All rights reserved",
+        "show_powered_by": true,
+        "show_policy": true,
+        "enable_follow_on_shop": true,
+        "use_accordion": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "pagefly_section_WWBnPa",
+    "footer"
+  ]
+}

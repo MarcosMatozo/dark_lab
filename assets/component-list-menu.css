@@ -1,0 +1,111 @@
+.list-menu--right {
+  right: 0;
+}
+
+.header__menu-button {
+  border: 1px solid rgba(var(--color-foreground), 0.2);
+  border-radius: var(--radius-10);
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 1.5rem;
+}
+
+.header__menu-button .link--hover:after {
+  display: none;
+}
+
+.list-menu--inline.button--style {
+  gap: 1.5rem;
+}
+
+.list-menu--disclosure {
+  position: absolute;
+  width: 30rem;
+  top: calc(100% + 1rem);
+}
+
+.list-menu--disclosure:focus {
+  outline: none;
+}
+
+.list-menu__item .link--hover {
+  min-width: max-content;
+}
+.header__submenu .list-menu__item .link--hover {
+  min-width: unset;
+}
+.menu-list--item {
+  min-width: max-content;
+}
+.list-menu--disclosure.localization-selector {
+  max-height: 18rem;
+  overflow: auto;
+  width: 10rem;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 749px) {
+  .header__menu-button {
+    padding: 1.5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-5);
+  }
+}
+@media screen and (min-width: 990px){
+  .header__inline-menu {
+    display: grid;
+    position: relative;
+  }
+  .header__inline-menu .btn--slide {
+    width: 7rem;
+    padding: 0px;
+    top: 0px;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    border: 0;
+    z-index: 1;
+  }
+  .menu-slide-arrow-left {
+    left: 0px;
+    justify-content: flex-start;
+    background: linear-gradient(90deg, rgba(var(--color-background),1) 50%, rgba(var(--color-background),0) 100%);
+  }
+  .menu-slide-arrow-right {
+    right: 0px;
+    justify-content: flex-end;
+    color: currentColor;
+    background: linear-gradient(90deg, rgba(var(--color-background),0) 0%, rgba(var(--color-background),1) 50%);
+  }
+  .list-menu--inline {
+    white-space: nowrap;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+  header-menu {
+    white-space: normal;
+  }
+  .header--top-left .header__inline-menu .list-menu--inline:not(.button--style)>li:first-child {
+    margin-left: -1.5rem;
+  }
+  .list-menu--inline::-webkit-scrollbar {
+    display: none;
+  }
+  .list-menu--inline {
+    scrollbar-width: none;
+  }
+  
+  .header__inline-menu:not(.menu-overflow) .btn--slide {
+    display: none;
+  }
+  .header__inline-menu .btn--slide:disabled {
+    display: none;
+  }
+}

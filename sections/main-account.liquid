@@ -1,0 +1,195 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.50 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.50 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 990px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="customer account section-{{ section.id }}-padding">
+  <div class="account_top_bar mgb-medium">
+    <div class="left_side_box">
+      <div class="section-heading__bar sp-small">
+        <h1 class="title h2">
+          {{ 'customer.account.title' | t }}
+        </h1>
+        <p>
+          {{ 'customer.account.subtitle' | t }}
+          {{ customer.name }}
+        </p>
+      </div>
+    </div>
+    <div class="right_side_box">
+      <a href="{{ routes.account_logout_url }}" class="button button--secondary logout_btns_customer warning__btn">
+        {{ 'customer.log_out' | t }}
+      </a>
+    </div>
+  </div>
+
+  <div class="orde_section_main ">
+    <div class="left_option_list">
+      <div class="btn_list_order">
+        <a href="{{ routes.account_url }}" class="button logout_btns_customer customer_actives">
+          {{- 'customer.account.account_overview' | t -}}
+        </a>
+        <a href="{{ routes.account_addresses_url }}" class="button button--secondary logout_btns_customer">
+          {{- 'customer.account.view_addresses' | t -}}
+        </a>
+      </div>
+    </div>
+    <div class="right_order_list_option">
+      <div>
+        <h4 class="mgb-small list_account_title">{{ 'customer.orders.title' | t }}</h4>
+        {% paginate customer.orders by 20 %}
+          {%- if customer.orders.size > 0 -%}
+            <div class="order_list_table">
+              <ul>
+                <li class="color-scheme-2">
+                  <span class="h6 first_colm">{{ 'customer.orders.order_number' | t }}</span>
+                  <span class="h6 sec_colm">{{ 'customer.orders.date' | t }}</span>
+                  <span class="h6 third_colm">{{ 'customer.orders.payment_status' | t }}</span>
+                  <span class="h6 four_colm">{{ 'customer.orders.fulfillment_status' | t }}</span>
+                  <span class="h6 five_colm">{{ 'customer.orders.total' | t }}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="list_order_mainb">
+              <ul>
+                {%- for order in customer.orders -%}
+                  <li>
+                    <span class="first_colm">
+                      <a href="{{ order.customer_url }}">
+                        {{ order.name }}
+                      </a>
+                    </span>
+                    <span class="">{{ order.created_at | time_tag: format: 'date' }}</span>
+                    <span class="">{{ order.financial_status_label }}</span>
+                    <span class="">{{ order.fulfillment_status_label }}</span>
+                    <span class="five_colm">{{ order.total_net_amount | money_with_currency }}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="mobile_order_list">
+              {%- for order in customer.orders -%}
+                <ul>
+                  <li>
+                    <span class="h6 left_side">{{ 'customer.orders.order_number' | t }}</span>
+                    <span class="right_side"
+                      ><a href="{{ order.customer_url }}">{{ order.name }}</a>
+                    </span>
+                  </li>
+                  <li>
+                    <span class="h6 left_side">{{ 'customer.orders.date' | t }}</span>
+                    <span class="right_side">{{ order.created_at | time_tag: format: 'date' }}</span>
+                  </li>
+                  <li>
+                    <span class="h6 left_side">{{ 'customer.orders.payment_status' | t }}</span>
+                    <span class="right_side">{{ order.financial_status_label }}</span>
+                  </li>
+                  <li>
+                    <span class="h6 left_side">{{ 'customer.orders.fulfillment_status' | t }}</span>
+                    <span class="right_side">{{ order.fulfillment_status_label }}</span>
+                  </li>
+                  <li>
+                    <span class="h6 left_side">{{ 'customer.orders.total' | t }}</span>
+                    <span class="right_side">{{ order.total_net_amount | money_with_currency }}</span>
+                  </li>
+                </ul>
+              {% endfor %}
+            </div>
+          {%- else -%}
+            <p>{{ 'customer.orders.none' | t }}</p>
+          {%- endif -%}
+          {%- if paginate.pages > 1 -%}
+            {%- if paginate.parts.size > 0 -%}
+              <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+                <ul role="list">
+                  {%- if paginate.previous -%}
+                    <li>
+                      <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                        </svg>
+                      </a>
+                    </li>
+                  {%- endif -%}
+
+                  {%- for part in paginate.parts -%}
+                    <li>
+                      {%- if part.is_link -%}
+                        <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                          {{- part.title -}}
+                        </a>
+                      {%- else -%}
+                        {%- if part.title == paginate.current_page -%}
+                          <span
+                            aria-current="page"
+                            aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                          >
+                            {{- part.title -}}
+                          </span>
+                        {%- else -%}
+                          <span>{{ part.title }}</span>
+                        {%- endif -%}
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+
+                  {%- if paginate.next -%}
+                    <li>
+                      <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                        <svg aria-hidden="true" focusable="false" viewBox="0 0 10 6">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                        </svg>
+                      </a>
+                    </li>
+                  {%- endif -%}
+                </ul>
+              </nav>
+            {%- endif -%}
+          {%- endif -%}
+        {% endpaginate %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "t:sections.main-account.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.section_spacing.content",
+      "info": "t:sections.all.section_spacing.info"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.section_spacing.above",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.section_spacing.below",
+      "default": 100
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,286 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Collections",
+            "heading_size": "h1",
+            "autoslide": ""
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+      }
+    },
+    "collection_list": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_1": {
+          "type": "featured_collection",
+          "settings": {
+          }
+        },
+        "featured_collection_2": {
+          "type": "featured_collection",
+          "settings": {
+            "color_scheme": "scheme-3"
+          }
+        },
+        "featured_collection_3": {
+          "type": "featured_collection",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_1",
+        "featured_collection_2",
+        "featured_collection_3"
+      ],
+      "settings": {
+        "title": "",
+        "collections_per_row": 1,
+        "image_width": "large",
+        "custom_ratio": 3,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "scrolling_text": {
+      "type": "scrolling-text",
+      "blocks": {
+        "scrolling_text_1": {
+          "type": "scrolling_text",
+          "settings": {
+          }
+        },
+        "scrolling_text_2": {
+          "type": "scrolling_text",
+          "settings": {
+            "text_stroke": false
+          }
+        },
+        "scrolling_text_3": {
+          "type": "scrolling_text",
+          "settings": {
+          }
+        },
+        "scrolling_text_4": {
+          "type": "scrolling_text",
+          "settings": {
+            "text_stroke": false
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_1",
+        "scrolling_text_2",
+        "scrolling_text_3",
+        "scrolling_text_4"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "Collections",
+        "custom_ratio": 2,
+        "grid_alignment": "center",
+        "show_product_count": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "masonry_grid": {
+      "type": "masonry-grid",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image_1": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "image",
+        "image_1",
+        "image_2"
+      ],
+      "settings": {
+        "title": "",
+        "color_scheme": "scheme-1",
+        "padding_top": 100,
+        "padding_bottom": 50
+      }
+    },
+    "rich_text_second": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Collections",
+            "heading_size": "h1",
+            "autoslide": ""
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share a vivid description about your store that brings out its unique features and benefits.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "expanded_width": true,
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 100
+      }
+    },
+    "image_gallery": {
+      "type": "image-gallery",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+          }
+        },
+        "image_1": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image_2": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image_3": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image_4": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "image_5": {
+          "type": "image",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "image_1",
+        "image_2",
+        "image_3",
+        "image_4",
+        "image_5"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2"
+      }
+    },
+    "text_columns_with_icons": {
+      "type": "text-columns-with-icons",
+      "blocks": {
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "icon": "icon-package"
+          }
+        },
+        "column_2": {
+          "type": "column",
+          "settings": {
+            "icon": "icon-shopping-cart"
+          }
+        },
+        "column_3": {
+          "type": "column",
+          "settings": {
+            "icon": "icon-user"
+          }
+        },
+        "column_4": {
+          "type": "column",
+          "settings": {
+            "icon": "icon-lock"
+          }
+        }
+      },
+      "block_order": [
+        "column_1",
+        "column_2",
+        "column_3",
+        "column_4"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "color_scheme": "scheme-1",
+        "style": "simple",
+        "column_per_row": 4,
+        "title_size": "h5",
+        "text_alignment": "center",
+        "column_per_row_mobile": "2",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    }
+  },
+  "order": [
+    "rich_text",
+    "collection_list",
+    "scrolling_text",
+    "main",
+    "masonry_grid",
+    "rich_text_second",
+    "image_gallery",
+    "text_columns_with_icons"
+  ]
+}
