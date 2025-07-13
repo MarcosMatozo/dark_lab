@@ -1,7 +1,7 @@
 {{ 'product_hotsite.css' | asset_url | stylesheet_tag }}
 
 
-<div class="product-hotsite-banners-bg" style="background-image: url({{ section.settings.hotsite_banner_image_bg | image_url: width: section.settings.hotsite_banner_image_bg.width }}); background-position: 0 0; background-repeat: no-repeat; background-size: auto">
+<div class="product-hotsite-banners-bg" style="background-image: url({{ section.settings.hotsite_banner_image_bg | image_url: width: section.settings.hotsite_banner_image_bg.width }}); background-position: 0 0; background-repeat: no-repeat; background-size: 100%">
   {% for block in section.blocks %}
     {% case block.type %}
       {% when 'product_hotsite_banner' %}
@@ -19,6 +19,31 @@
                 {%- endif -%}
               </div>
       </div>
+      
+    {% endcase %}
+    
+  {% endfor %}
+</div>
+
+
+<div class="product-hotsite-banners-bg charac" style="background-image: url({{ section.settings.hotsite_banner_image_bg_charac | image_url: width: section.settings.hotsite_banner_image_bg_charac.width }}); background-position: 0 0; background-repeat: no-repeat; background-size: 100%; margin-top: 7rem">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'banner_charac' %}
+          <div class="page-width">
+            <div class="product-hotsite">
+                {% if block.type == 'banner_charac' %}
+                    <div class="product-hotsite-banner">
+                        <div class="product-hotsite-banner__image desktop-only">
+                            {{ block.settings.hotsite_banner_image_charac | image_url: width: "1216" | image_tag }}
+                        </div>
+                        <div class="product-hotsite-banner__image mobile-only">
+                            {{ block.settings.hotsite_banner_image_charac_mb | image_url: width: "960" | image_tag }}
+                        </div>
+                    </div>
+                {%- endif -%}
+              </div>
+          </div>
       
     {% endcase %}
     
