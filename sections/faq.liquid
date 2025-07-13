@@ -1,14 +1,21 @@
 {{ 'faq.css' | asset_url | stylesheet_tag }}
 {{ 'accordion.css' | asset_url | stylesheet_tag }}
+{{ 'faq-product.css' | asset_url | stylesheet_tag }}
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.50 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.50 | round: 0 }}px;
   }
-  @media screen and (min-width: 990px) {
+  @media screen and (min-width: 1025px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .section-{{ section.id }}-padding {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 {%- endstyle -%}
@@ -92,7 +99,7 @@
                   <button type="button" class="h5 accordion-toggle-btn" data-toggle="#accordion-toggle-content-{{ block.id }}">
                     {{ block.settings.heading | escape }} 
                     <span class="toggle-svg button--primary">
-                      {% render 'theme-icons', icon: 'plus' %}
+                      {% render 'theme-icons', icon: 'plus-accordion' %}
                     </span>
                   </button>
                   <div id="accordion-toggle-content-{{ block.id }}" class="{%- if block.settings.heading != blank %}accordion-toggle-content{% endif %}">
@@ -105,6 +112,10 @@
             </div>
           </vertical-slider>
         </div>
+      </div>
+
+      <div class="faq-image">
+        <img width="{{section.settings.faq_image.width}}" height="{{section.settings.faq_image.height}}" src="{{ section.settings.faq_image | image_url: width: section.settings.faq_image.width }}" alt="{{ section.settings.faq_image.alt | escape }}">
       </div>
     </div>
   </div>
@@ -178,6 +189,11 @@
     {
       "type": "header",
       "content": "t:sections.all.layout.content"
+    },
+    {
+      "type": "image_picker",
+      "id": "faq_image",
+      "label": "Imagem do FAQ"
     },
     {
       "type": "color_scheme",

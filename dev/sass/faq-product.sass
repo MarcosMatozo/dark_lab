@@ -1,0 +1,57 @@
+.faq-content:not(.forc1)
+    display: flex
+    gap: 2rem
+    .faq-content__wrapper
+        display: flex
+        flex-direction: column
+        flex: 1
+        row-gap: 0
+
+    h2.faq-block__heading
+        font-size: 2rem
+        margin-bottom: 2rem
+    .faq-accordion-item
+        border: none
+        + .faq-accordion-item
+            margin-top: 0.5rem
+        button.h5.accordion-toggle-btn
+            padding: 1rem
+            font-size: 1.25rem
+            background-color: #2D2D2D
+            border-radius: 20px 20px 0 0
+            &:not(.is-active)
+                border-radius: 20px
+            &.is-active
+                padding: .4rem 1rem 2rem
+        .accordion-toggle-content
+            background-color: #fff
+            border-radius: 0 0 20px 20px
+            padding: 1rem
+            color: #000
+            margin-bottom: 0
+            .faq-block__details-content
+                padding: 0
+
+        .toggle-svg.toggle-svg
+            background-color: unset
+            border: none
+
+        &.is-active
+            .toggle-svg.toggle-svg
+                svg
+                    transform: rotate(180deg)
+
+    .faq-image
+        flex: 1
+        align-items: center
+        display: flex
+        justify-content: center
+        img
+            border-radius: 2rem
+            max-width: 100%
+
+
+    @media screen and (max-width: 1024px)
+        flex-wrap: wrap
+        > div
+            flex: 1 1 100% !important

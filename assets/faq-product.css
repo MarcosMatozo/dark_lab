@@ -1,0 +1,67 @@
+.faq-content:not(.forc1) {
+  display: flex;
+  gap: 2rem;
+}
+.faq-content:not(.forc1) .faq-content__wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  row-gap: 0;
+}
+.faq-content:not(.forc1) h2.faq-block__heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.faq-content:not(.forc1) .faq-accordion-item {
+  border: none;
+}
+.faq-content:not(.forc1) .faq-accordion-item + .faq-accordion-item {
+  margin-top: 0.5rem;
+}
+.faq-content:not(.forc1) .faq-accordion-item button.h5.accordion-toggle-btn {
+  padding: 1rem;
+  font-size: 1.25rem;
+  background-color: #2D2D2D;
+  border-radius: 20px 20px 0 0;
+}
+.faq-content:not(.forc1) .faq-accordion-item button.h5.accordion-toggle-btn:not(.is-active) {
+  border-radius: 20px;
+}
+.faq-content:not(.forc1) .faq-accordion-item button.h5.accordion-toggle-btn.is-active {
+  padding: 0.4rem 1rem 2rem;
+}
+.faq-content:not(.forc1) .faq-accordion-item .accordion-toggle-content {
+  background-color: #fff;
+  border-radius: 0 0 20px 20px;
+  padding: 1rem;
+  color: #000;
+  margin-bottom: 0;
+}
+.faq-content:not(.forc1) .faq-accordion-item .accordion-toggle-content .faq-block__details-content {
+  padding: 0;
+}
+.faq-content:not(.forc1) .faq-accordion-item .toggle-svg.toggle-svg {
+  background-color: unset;
+  border: none;
+}
+.faq-content:not(.forc1) .faq-accordion-item.is-active .toggle-svg.toggle-svg svg {
+  transform: rotate(180deg);
+}
+.faq-content:not(.forc1) .faq-image {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.faq-content:not(.forc1) .faq-image img {
+  border-radius: 2rem;
+  max-width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .faq-content:not(.forc1) {
+    flex-wrap: wrap;
+  }
+  .faq-content:not(.forc1) > div {
+    flex: 1 1 100% !important;
+  }
+}
