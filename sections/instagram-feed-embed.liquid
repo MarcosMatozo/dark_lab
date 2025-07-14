@@ -13,16 +13,24 @@
         display: block;
         margin: auto;
         width: 100%;
+        min-height: 70rem;
+        border-radius: 1rem;
      }
 
      @media screen and (min-width: 769px) {
         .instagram-feed.{{ section.id }}{
-            width: 400px;
+            width: 100%;
+            max-width: 100%;
         }
     }
-     @media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
         .instagram-feed.{{ section.id }}{
             width: 100%;
+        }
+    }
+    @media screen and (max-width: 780px) {
+        .instagram-feed.{{ section.id }} iframe{
+            min-height: 50rem;
         }
     }
 </style>
