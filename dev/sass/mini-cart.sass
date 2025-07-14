@@ -1,0 +1,77 @@
+.cart-drawer__footer
+    ~ .docapp-promo-popup-container
+        .docapp-promo-close, .docapp-promo-popup__header
+                display: none !important
+        .docapp-promo-popup__earned, .docapp-promo-popup__more
+            display: none !important
+            &::before
+                content: none !important
+        .docapp-promo-offer-progress-percent, .docapp-promo-popup__continue
+            display: none !important
+
+        .docapp-promo-offers
+
+
+            .docapp-promo-offer-info-text-main
+                margin-bottom: 1rem
+
+            //Brindes
+            .docapp-promo-offer-card
+                border: 2px solid #fff
+                border-radius: 1rem
+                padding: 1rem
+                margin-bottom: 1rem
+                .docapp-promo-offer-progress-bar-current
+                    height: 6px
+                    display: block
+                    border-radius: 20px
+                    margin: .5rem 0
+                
+                //Brindes alcançados
+                &.docapp-promo-offer-card--completed
+                    border-color: #e5f2ef !important
+                    margin-bottom: 1rem
+
+                    .docapp-promo-offer-progress-bar-current
+                        background-color: #007f5f !important
+                    
+                    //Frete grátis
+                    &:not(:has(.docapp-promo-offer-info-image img))
+                        .docapp-promo-offer-progress
+                            flex-basis: 100% !important
+
+                        .docapp-promo-offer-info-text-main
+                            color: transparent
+                            position: relative
+                            &::after
+                                content: "Frete grátis"
+                                position: absolute
+                                left: 0
+                                top: 0
+                                color: #fff
+
+
+                    
+
+                //Brindes ainda não alcançados
+                &:not(.docapp-promo-offer-card--completed)
+                    // background-color: green !important
+
+                    .docapp-promo-offer-progress-bar-current
+                        background-color: #f1e315 !important
+
+                .docapp-promo-offer
+                    display: flex
+                    flex-wrap: wrap
+                    .docapp-promo-offer-info, .docapp-promo-offer-progress
+                        flex-basis: calc(100% - 90px)
+                        padding-right: 2rem
+                    .docapp-promo-offer-info-image
+                        flex-basis: 90px
+                        img
+                            max-width: 100%
+            //Mensagem de brindes disponíveis
+            .docapp-promo-popup__more
+                margin-bottom: 1rem
+            
+           

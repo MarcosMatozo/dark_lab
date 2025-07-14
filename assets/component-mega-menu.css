@@ -37,8 +37,6 @@
 .mega-menu[open] .mega-menu__content {
   opacity: 1;
   transform: translateY(0);
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .mega-menu__list {
