@@ -136,15 +136,15 @@
           "type": "tabs",
           "settings": {
             "heading": "Benefícios",
-            "content": "<ol><li><br/>Ajuda no ganho de massa muscular<br/><br/><br/></li><li>Acelera o processo de recuperação<br/><br/></li></ol><p><br/><br/></p><p><br/><br/></p><p><br/><br/></p><p><br/></p>",
+            "content": "<p>Promove vasodilatação<br/><br/>✔️ Melhora da circulação sanguínea<br/><br/>✔️ Redução da fadiga muscular<br/><br/>✔️ Acelera a recuperação pós-treino</p><p><strong>Qualidade Dark Lab:</strong><br/><br/>✔️ Matéria-prima de alta qualidade<br/><br/>✔️ Produto sem glúten (Gluten Free)</p>",
             "page": ""
           }
         },
         "tabs_2": {
           "type": "tabs",
           "settings": {
-            "heading": "Outras informações",
-            "content": "<p>Product tabs refer to a user interface design pattern commonly used on e-commerce websites and product pages to organize and present various types of information about a product. Instead of overwhelming users with a long, single-page description, product tabs help break down information into manageable sections, each accessible through a tab. Each tab typically contains specific details or features of the product.</p>",
+            "heading": "Modo de uso",
+            "content": "<p><br/>Consumir <strong>4 cápsulas ao dia</strong>, sendo <strong>1 cápsula a cada duas horas</strong>, ou conforme orientação de um profissional da saúde.<br/><br/></p>",
             "page": ""
           }
         }
@@ -238,6 +238,11 @@
       "settings": {
         "include_margins": true
       }
+    },
+    "trustvox_pdp_QWETHp": {
+      "type": "trustvox-pdp",
+      "name": "Trustvox PDP",
+      "settings": {}
     },
     "related-products": {
       "type": "related-products",
@@ -354,11 +359,6 @@
         "padding_top": 18,
         "padding_bottom": 18
       }
-    },
-    "trustvox_pdp_QWETHp": {
-      "type": "trustvox-pdp",
-      "name": "Trustvox PDP",
-      "settings": {}
     }
   },
   "order": [

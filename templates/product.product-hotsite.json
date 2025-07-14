@@ -149,7 +149,8 @@
         "banner_charac_qKikMF": {
           "type": "banner_charac",
           "settings": {
-            "hotsite_banner_image_charac": "shopify://shop_images/first-line_3.png"
+            "hotsite_banner_image_charac": "shopify://shop_images/first-line_3.png",
+            "hotsite_banner_image_charac_mb": "shopify://shop_images/first-line_4.png"
           }
         },
         "banner_charac_C7qMQh": {
@@ -170,7 +171,8 @@
       "name": "Product Hotsite Banners",
       "settings": {
         "hotsite_banner_image_bg": "shopify://shop_images/bg-prod-hot-banners_cdfced92-165c-46b9-9179-d399061afc81.png",
-        "hotsite_banner_image_bg_charac": "shopify://shop_images/bg_charac.png"
+        "hotsite_banner_image_bg_charac": "shopify://shop_images/bg_charac.png",
+        "hotsite_banner_image_bg_charac2": "shopify://shop_images/bg-base_f10fc33f-3475-482d-80ee-3164c49eee29.png"
       }
     },
     "related-products": {
