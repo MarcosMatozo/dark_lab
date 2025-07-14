@@ -43,7 +43,7 @@
       ],
       "name": "Lista de Informações",
       "settings": {
-        "top_bar_bg": "#ED1C24"
+        "top_bar_bg": "#ed1c24"
       }
     },
     "header": {
@@ -58,7 +58,7 @@
         "logo_width": 150,
         "logo_width_mobile": 150,
         "menu": "main-menu",
-        "menu_position": "top-left",
+        "menu_position": "middle-left",
         "menu_type_desktop": "mega",
         "collection_featured_image": true,
         "menu_as_button": false,

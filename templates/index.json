@@ -545,81 +545,10 @@
         "espaco_abaixo": 12
       }
     },
-    "image_gallery": {
-      "type": "image-gallery",
-      "blocks": {
-        "text": {
-          "type": "text",
-          "settings": {
-            "title": "@darklabsuplementos",
-            "title_size": "h5",
-            "description": "<p>Nos siga</p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
-        "image_1": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AnyConv.com__Image_2.webp",
-            "link": ""
-          }
-        },
-        "image_2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AnyConv.com__Image_3.webp",
-            "link": ""
-          }
-        },
-        "image_3": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AnyConv.com__Image_4.webp",
-            "link": ""
-          }
-        },
-        "image_4": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AnyConv.com__Image_5.webp",
-            "link": ""
-          }
-        },
-        "image_5": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/AnyConv.com__Image_6.webp",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "text",
-        "image_1",
-        "image_2",
-        "image_3",
-        "image_4",
-        "image_5"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h3",
-        "heading_alignment": "left",
-        "color_scheme": "scheme-3",
-        "inverter_cores": true,
-        "column_per_row": 6,
-        "enable_slider_scrollbar": false,
-        "image_ratio": "original",
-        "circular_style": false,
-        "hover_effect": true,
-        "column_per_row_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "margin_top": 30,
-        "margin_bottom": 30
-      }
+    "instagram_feed_embed_9zpX4N": {
+      "type": "instagram-feed-embed",
+      "name": "Instagram Feed Embed",
+      "settings": {}
     },
     "newsletter": {
       "type": "newsletter",
@@ -680,7 +609,7 @@
     "blog_darklab_custom",
     "logo_list_zKbmzw",
     "reviews_geJD4g",
-    "image_gallery",
+    "instagram_feed_embed_9zpX4N",
     "newsletter",
     "custom_liquid_U8t7zP"
   ]
