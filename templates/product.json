@@ -354,6 +354,11 @@
         "padding_top": 18,
         "padding_bottom": 18
       }
+    },
+    "trustvox_pdp_QWETHp": {
+      "type": "trustvox-pdp",
+      "name": "Trustvox PDP",
+      "settings": {}
     }
   },
   "order": [
@@ -361,6 +366,7 @@
     "product_tabs",
     "text_columns_with_icons_1",
     "175060954955659455",
+    "trustvox_pdp_QWETHp",
     "related-products",
     "custom_liquid_y6eBkm",
     "text_columns_with_icons_kmETyH",

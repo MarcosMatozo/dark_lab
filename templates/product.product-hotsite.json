@@ -158,10 +158,6 @@
             "hotsite_banner_image_charac": "shopify://shop_images/Frame_2082.png",
             "hotsite_banner_image_charac_mb": "shopify://shop_images/Frame_2082.png"
           }
-        },
-        "banner_charac_bDbHkx": {
-          "type": "banner_charac",
-          "settings": {}
         }
       },
       "block_order": [
@@ -169,8 +165,7 @@
         "product_hotsite_banner_jfqikV",
         "product_hotsite_banner_XNeNVn",
         "banner_charac_qKikMF",
-        "banner_charac_C7qMQh",
-        "banner_charac_bDbHkx"
+        "banner_charac_C7qMQh"
       ],
       "name": "Product Hotsite Banners",
       "settings": {
