@@ -3867,7 +3867,7 @@ custom-scrollbar-vertical {
 .product-grid-item .quick-add {
     position: unset !important;
     width: 100% !important;
-    height: 100% !important;
+    height: auto !important;
     visibility: visible !important;
 }
 #MainContent {

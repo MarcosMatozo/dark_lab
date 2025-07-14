@@ -1,0 +1,41 @@
+<div class="page-width">
+    <div class="instagram-feed {{ section.id }}">
+        <iframe src="https://www.instagram.com/darklabsuplementos/embed/" frameborder="0"></iframe>
+    </div>
+</div>
+
+<style>
+    .instagram-feed.{{ section.id }}{
+        margin: 32px auto;
+        display: block;
+    }
+    .instagram-feed.{{ section.id }} iframe{
+        display: block;
+        margin: auto;
+        width: 100%;
+     }
+
+     @media screen and (min-width: 769px) {
+        .instagram-feed.{{ section.id }}{
+            width: 400px;
+        }
+    }
+     @media screen and (max-width: 768px) {
+        .instagram-feed.{{ section.id }}{
+            width: 100%;
+        }
+    }
+</style>
+
+{% schema %}
+{
+  "name": "Instagram Feed Embed",
+  "tag": "section",
+  "class": "product-hotsite",
+  "presets": [
+    {
+      "name": "Instagram Feed Embed"
+    }
+  ]
+}
+{% endschema %}
