@@ -177,6 +177,10 @@
                 {{ card_product.title | escape }}
               </a>
             </h3>
+            {% comment %} Trustvox {% endcomment %}
+            <div data-trustvox-product-code="{{ card_product.id }}"></div>
+
+
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
               <div class="product--grid-reviews{% if grid_text_alignment %} justify-{{ grid_text_alignment }}{% endif %}">
                 {% for i in (1..5) %}
