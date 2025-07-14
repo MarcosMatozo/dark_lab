@@ -346,8 +346,8 @@
           "settings": {
             "collection": "massa-muscular",
             "color_scheme": "scheme-3",
-            "image": "shopify://shop_images/Image.png",
-            "title": "Massa Muscular",
+            "image": "shopify://shop_images/ganho_de_massa_1_65f9e422-cb39-4d60-8242-f29c171fddf5.png",
+            "title": "&nbsp;",
             "link": "shopify://collections/massa-muscular",
             "description": ""
           }
@@ -355,9 +355,10 @@
         "featured_collection_2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "saude",
+            "collection": "creatina",
             "color_scheme": "scheme-3",
-            "title": "",
+            "image": "shopify://shop_images/alta_performance.png",
+            "title": "&nbsp;",
             "link": "shopify://collections/saude",
             "description": ""
           }
@@ -367,7 +368,8 @@
           "settings": {
             "collection": "performance",
             "color_scheme": "scheme-3",
-            "title": "",
+            "image": "shopify://shop_images/energia_e_emagrecimento_1_3ed44e5c-2b4a-4b63-8ecd-47a407e6f374.png",
+            "title": "&nbsp;",
             "link": "shopify://collections/performance",
             "description": ""
           }
@@ -393,7 +395,7 @@
         "custom_ratio": 1,
         "title_size": "h5",
         "grid_alignment": "left",
-        "show_product_count": true,
+        "show_product_count": false,
         "collections_per_row_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 40,
