@@ -12,6 +12,7 @@
     "parcela_geral": 3,
     "juros2": "0",
     "juros3": "0",
+    "favicon": "shopify://shop_images/drklab-fav.png",
     "page_width": 1600,
     "theme_radius": true,
     "custom_cursor": false,
@@ -28,7 +29,7 @@
     "type_body_font": "dm_sans_n4",
     "body_base_size": 14,
     "sale_badge_color_scheme": "scheme-4",
-    "sale_promotion": "⚡️ Últimas unidades ⚡️ Últimas unidades ⚡️ Últimas unidades ⚡️ Últimas unidades",
+    "sale_promotion": "",
     "sold_out_badge_color_scheme": "scheme-3",
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -80,6 +81,11 @@
       },
       "9063826921795943301": {
         "type": "shopify://apps/taptool-social-login/blocks/social_login/429eab56-c0e1-4900-af49-c07c2507eb38",
+        "disabled": false,
+        "settings": {}
+      },
+      "6251270934270006384": {
+        "type": "shopify://apps/stape-server-gtm/blocks/gtm/7e13c847-7971-409d-8fe0-29ec14d5f048",
         "disabled": false,
         "settings": {}
       }

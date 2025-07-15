@@ -14,7 +14,7 @@
       "settings": {
         "columns_desktop": 3,
         "grid_color_scheme": "",
-        "grid_style": "simple",
+        "grid_style": "classic",
         "image_ratio": "portrait",
         "show_secondary_image": true,
         "show_vendor": false,

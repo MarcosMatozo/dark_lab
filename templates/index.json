@@ -15,8 +15,8 @@
         "slide_1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER_DESKTOP_CREATINA.png",
-            "mobile_image": "shopify://shop_images/BANNER_MOBILE_CREATINA.png",
+            "image": "shopify://shop_images/creatina_vf_713d61ad-5ae0-413e-89b7-2f73946b6bf7.png",
+            "mobile_image": "shopify://shop_images/CREATINA_VF_MOBILE.png",
             "image_overlay_opacity": 0,
             "subheading": "",
             "heading": "",
@@ -46,7 +46,30 @@
             "heading_size": "h1",
             "description": "",
             "primary_button_label": "",
-            "primary_button_link": "",
+            "primary_button_link": "https://darklabsuplementos.com.br/collections/whey-protein",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_CEMLjr": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER-DESKTOP_BARRINHA-CREATINA_1920x928_a496654a-7721-4f20-aff1-a06ca56f4ccf.png",
+            "mobile_image": "shopify://shop_images/BANNER-MOBILE_BARRINHA-CREATINA_767x1397_831a5f1a-8fa6-4e9f-a975-293a74bb5978.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "https://darklabsuplementos.com.br/products/creatine-protein-bar-display-12-un-dark-lab?_pos=1&_sid=8b64957ca&_ss=r",
             "primary_button_style": "primary",
             "secondary_button_label": "",
             "secondary_button_link": "",
@@ -61,7 +84,8 @@
       },
       "block_order": [
         "slide_1",
-        "slide_ww9zm3"
+        "slide_ww9zm3",
+        "slide_CEMLjr"
       ],
       "settings": {
         "expanded_width": true,
@@ -300,44 +324,21 @@
         "padding_bottom": 12
       }
     },
-    "slideshow_HTXDUP": {
+    "slideshow_xdpfwC": {
       "type": "slideshow",
       "blocks": {
-        "slide_zd4HWJ": {
+        "slide_JH7Xyw": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_2.jpg",
-            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image": "shopify://shop_images/BANNER_VESTUARIO_DESKTOP.png",
+            "mobile_image": "shopify://shop_images/BANNER_VESTUARIO_MOBILE.png",
             "image_overlay_opacity": 0,
             "subheading": "",
             "heading": "",
             "heading_size": "h1",
             "description": "",
             "primary_button_label": "",
-            "primary_button_link": "",
-            "primary_button_style": "primary",
-            "secondary_button_label": "",
-            "secondary_button_link": "",
-            "secondary_button_style": "secondary",
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "show_text_box": false,
-            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_jqFek8": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_2.jpg",
-            "mobile_image": "shopify://shop_images/Image-1-hover.png",
-            "image_overlay_opacity": 0,
-            "subheading": "",
-            "heading": "",
-            "heading_size": "h1",
-            "description": "",
-            "primary_button_label": "",
-            "primary_button_link": "",
+            "primary_button_link": "https://darklabsuplementos.com.br/collections/vestuario",
             "primary_button_style": "primary",
             "secondary_button_label": "",
             "secondary_button_link": "",
@@ -351,8 +352,47 @@
         }
       },
       "block_order": [
-        "slide_zd4HWJ",
-        "slide_jqFek8"
+        "slide_JH7Xyw"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "slideshow_HTXDUP": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_zd4HWJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/BANNER_DARK_MAMBA_DESKTOP.png",
+            "mobile_image": "shopify://shop_images/BANNER_DARK_MAMBA_MOBILE.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "https://darklabsuplementos.com.br/products/dark-mamba-60-capsulas-dark-lab?_pos=1&_sid=2f2f3cfe8&_ss=r",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_zd4HWJ"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
@@ -366,58 +406,6 @@
     },
     "slideshow_9h8MFR": {
       "type": "slideshow",
-      "blocks": {
-        "slide_YefJ3R": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_1.jpg",
-            "mobile_image": "shopify://shop_images/Image-1-hover.png",
-            "image_overlay_opacity": 0,
-            "subheading": "",
-            "heading": "",
-            "heading_size": "h1",
-            "description": "",
-            "primary_button_label": "",
-            "primary_button_link": "",
-            "primary_button_style": "primary",
-            "secondary_button_label": "",
-            "secondary_button_link": "",
-            "secondary_button_style": "secondary",
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "show_text_box": false,
-            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_mfMyB7": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_1.jpg",
-            "mobile_image": "shopify://shop_images/Image-1-hover.png",
-            "image_overlay_opacity": 0,
-            "subheading": "",
-            "heading": "",
-            "heading_size": "h1",
-            "description": "",
-            "primary_button_label": "",
-            "primary_button_link": "",
-            "primary_button_style": "primary",
-            "secondary_button_label": "",
-            "secondary_button_link": "",
-            "secondary_button_style": "secondary",
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "show_text_box": false,
-            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_YefJ3R",
-        "slide_mfMyB7"
-      ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "expanded_width": false,
@@ -430,58 +418,6 @@
     },
     "slideshow_GGpB34": {
       "type": "slideshow",
-      "blocks": {
-        "slide_PHqgqN": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23.jpg",
-            "mobile_image": "shopify://shop_images/Image-1-hover.png",
-            "image_overlay_opacity": 0,
-            "subheading": "",
-            "heading": "",
-            "heading_size": "h1",
-            "description": "",
-            "primary_button_label": "",
-            "primary_button_link": "",
-            "primary_button_style": "primary",
-            "secondary_button_label": "",
-            "secondary_button_link": "",
-            "secondary_button_style": "secondary",
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "show_text_box": false,
-            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "slide_DRpNhE": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_2.jpg",
-            "mobile_image": "shopify://shop_images/Image-1-hover.png",
-            "image_overlay_opacity": 0,
-            "subheading": "",
-            "heading": "",
-            "heading_size": "h1",
-            "description": "",
-            "primary_button_label": "",
-            "primary_button_link": "",
-            "primary_button_style": "primary",
-            "secondary_button_label": "",
-            "secondary_button_link": "",
-            "secondary_button_style": "secondary",
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "show_text_box": false,
-            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_PHqgqN",
-        "slide_DRpNhE"
-      ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "expanded_width": false,
@@ -501,7 +437,7 @@
             "collection": "massa-muscular",
             "color_scheme": "scheme-3",
             "image": "shopify://shop_images/ganho_de_massa_vf.png",
-            "title": " ",
+            "title": "  &nbsp;",
             "link": "shopify://collections/massa-muscular",
             "description": ""
           }
@@ -512,7 +448,7 @@
             "collection": "creatina",
             "color_scheme": "scheme-3",
             "image": "shopify://shop_images/alta_performance_vf.png",
-            "title": " ",
+            "title": " &nbsp;",
             "link": "shopify://collections/saude",
             "description": ""
           }
@@ -522,8 +458,8 @@
           "settings": {
             "collection": "performance",
             "color_scheme": "scheme-3",
-            "image": "shopify://shop_images/energia_e_emagrecimento_1_3ed44e5c-2b4a-4b63-8ecd-47a407e6f374.png",
-            "title": " ",
+            "image": "shopify://shop_images/energia_vf.png",
+            "title": " &nbsp;",
             "link": "shopify://collections/performance",
             "description": ""
           }
@@ -600,7 +536,7 @@
           "settings": {
             "image": "shopify://shop_images/Main-button_2.svg",
             "title": "",
-            "link": "shopify://blogs/news"
+            "link": "https://blog.darklabsuplementos.com.br"
           }
         },
         "logo_U8iL9w": {
@@ -701,6 +637,11 @@
         "espaco_abaixo": 12
       }
     },
+    "trustvox_home_AheFwq": {
+      "type": "trustvox-home",
+      "name": "Trustvox Home",
+      "settings": {}
+    },
     "instagram_feed_embed_9zpX4N": {
       "type": "instagram-feed-embed",
       "disabled": true,
@@ -778,6 +719,7 @@
     "slideshow_kcANhN",
     "slideshow_QTpDzA",
     "custom_liquid_aeyPVU",
+    "slideshow_xdpfwC",
     "slideshow_HTXDUP",
     "slideshow_9h8MFR",
     "slideshow_GGpB34",
@@ -785,6 +727,7 @@
     "blog_darklab_custom",
     "logo_list_zKbmzw",
     "reviews_geJD4g",
+    "trustvox_home_AheFwq",
     "instagram_feed_embed_9zpX4N",
     "1752584182dd2fb6c7",
     "newsletter",

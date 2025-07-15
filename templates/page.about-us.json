@@ -15,7 +15,7 @@
         "slide_QFwRRU": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/AnyConv.com__image.webp",
+            "image": "shopify://shop_images/logo_1.png",
             "mobile_image": "shopify://shop_images/image_2f464349-ca6c-4ffd-8665-3a90a75b11e7.png",
             "image_overlay_opacity": 0,
             "subheading": "",
@@ -81,7 +81,7 @@
         "text_MAGxza"
       ],
       "custom_css": [
-        ".scroll-trigger p{font-size: 1.7rem;}"
+        ".scroll-trigger p {font-size: 1.7rem;}"
       ],
       "name": "t:sections.rich-text.presets.name",
       "settings": {
