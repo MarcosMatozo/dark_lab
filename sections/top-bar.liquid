@@ -6,9 +6,9 @@
   <div class="container-produced" style="background-color: {{ section.settings.top_bar_bg }};">
 
     {% if section.blocks.size > 0 %}
-        <slider-component class="slider-mobile-gutter">
+        <slideshow-component data-disable-arrows="true" class="slider-mobile-gutter" >
             <div id="Slider-{{ section.id }}" class="slideshow banner banner--original grid grid--1-col slider mandatory slider--everywhere"
-             data-autoplay="true">
+             data-autoplay="true" data-speed="5" >
                 {% for block in section.blocks %}
                     <div class="slideshow__slide grid__item grid--1-col slider__slide" id="Slide-{{ section.id }}-{{ forloop.index }}">
                         
@@ -39,7 +39,7 @@
             <button  type="button" class=" {{section.id }} slider-button slider-button--next arrow-with-dots" name="next" aria-label="{{ 'sections.slideshow.next_slideshow' | t }}">
                 {% render 'theme-icons', icon: 'slider-icon-right' %}
             </button>
-        </slider-component>
+        </slideshow-component>
     {% endif %}
   </div>
 </div>

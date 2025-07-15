@@ -1,0 +1,34 @@
+<style>
+  .hidden-{{ section.id }} {
+    display: none !important
+  }
+</style>
+
+<div id="_trustvox_colt" class="hidden-{{ section.id }}"></div>
+
+
+<script async="true" type="text/javascript" src="{{ 'trustvox-colt-staging.js' | asset_url }}"></script>
+<script>
+  var _trustvox_colt = _trustvox_colt || [];
+  _trustvox_colt.push(['_storeId', '118866'], ['_limit', '7']);
+</script>
+
+
+
+{% schema %}
+{
+  "name": "Trustvox Home",
+  "tag": "section",
+  "class": "trustvox-home",
+  "settings": [
+    
+  ],
+  "blocks": [
+  ],
+  "presets": [
+    {
+      "name": "Trustvox Home",
+    }
+  ]
+}
+{% endschema %}

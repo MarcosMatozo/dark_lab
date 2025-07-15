@@ -770,21 +770,20 @@ class SlideshowComponent extends SliderComponent {
     super();
     this.sliderControlWrapper = this.querySelector('.slider-buttons');
     this.enableSliderLooping = true;
-
-    if (!this.sliderControlWrapper) return;
+    if (!this.sliderControlWrapper && this.dataset?.disableArrows != 'true') return;
 
     this.sliderFirstItemNode = this.slider.querySelector('.slideshow__slide');
-    if (this.sliderItemsToShow.length > 0) this.currentPage = 1;
+    if (this?.sliderItemsToShow?.length > 0) this.currentPage = 1;
 
     this.announcementBarSlider = this.querySelector('.announcement-bar-slider');
     // Value below should match --duration-announcement-bar CSS value
     this.announcerBarAnimationDelay = this.announcementBarSlider ? 250 : 0;
 
-    this.sliderControlLinksArray = Array.from(this.sliderControlWrapper.querySelectorAll('.slider-counter__link'));
-    this.sliderControlLinksArray.forEach((link) => link.addEventListener('click', this.linkToSlide.bind(this)));
-    this.slider.addEventListener('scroll', this.setSlideVisibility.bind(this));
-    this.setSlideVisibility();
+    this.sliderControlLinksArray = Array.from(this?.sliderControlWrapper?.querySelectorAll('.slider-counter__link') || [] );
 
+    this.sliderControlLinksArray?.forEach((link) => link.addEventListener('click', this.linkToSlide.bind(this)));
+    this.slider?.addEventListener('scroll', this.setSlideVisibility.bind(this));
+    this.setSlideVisibility();
     if (this.announcementBarSlider) {
       this.announcementBarArrowButtonWasClicked = false;
 
@@ -803,7 +802,6 @@ class SlideshowComponent extends SliderComponent {
         );
       });
     }
-
     if (this.slider.getAttribute('data-autoplay') === 'true') this.setAutoPlay();
   }
 
@@ -820,7 +818,7 @@ class SlideshowComponent extends SliderComponent {
       this.autoplayButtonIsSetToPlay = true;
       this.play();
     } else {
-      this.reducedMotion.matches || this.announcementBarArrowButtonWasClicked
+      this?.reducedMotion?.matches || this?.announcementBarArrowButtonWasClicked
         ? this.pause()
         : this.play();
     }
@@ -889,8 +887,8 @@ class SlideshowComponent extends SliderComponent {
       if (!this.autoplayButtonIsSetToPlay || focusedOnAutoplayButton) return;
       this.play();
     } else if (
-      !this.reducedMotion.matches &&
-      !this.announcementBarArrowButtonWasClicked
+      !this?.reducedMotion?.matches &&
+      !this?.announcementBarArrowButtonWasClicked
     ) {
       this.play();
     }
