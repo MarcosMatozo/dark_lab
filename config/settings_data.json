@@ -72,6 +72,16 @@
         "type": "shopify://apps/pagefly-page-builder/blocks/app-embed/83e179f7-59a0-4589-8c66-c0dddf959200",
         "disabled": false,
         "settings": {}
+      },
+      "13305437469741356523": {
+        "type": "shopify://apps/gsc-instagram-feed/blocks/embed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
+        "disabled": false,
+        "settings": {}
+      },
+      "9063826921795943301": {
+        "type": "shopify://apps/taptool-social-login/blocks/social_login/429eab56-c0e1-4900-af49-c07c2507eb38",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {

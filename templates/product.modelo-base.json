@@ -134,19 +134,17 @@
       "blocks": {
         "tabs_1": {
           "type": "tabs",
-          "disabled": true,
           "settings": {
             "heading": "Benefícios",
-            "content": "<p>Promove vasodilatação<br/><br/>✔️ Melhora da circulação sanguínea<br/><br/>✔️ Redução da fadiga muscular<br/><br/>✔️ Acelera a recuperação pós-treino</p><p><strong>Qualidade Dark Lab:</strong><br/><br/>✔️ Matéria-prima de alta qualidade<br/><br/>✔️ Produto sem glúten (Gluten Free)</p>",
+            "content": "<p>Digite os benefícios </p>",
             "page": ""
           }
         },
         "tabs_2": {
           "type": "tabs",
-          "disabled": true,
           "settings": {
             "heading": "Modo de uso",
-            "content": "<p><br/>Consumir <strong>4 cápsulas ao dia</strong>, sendo <strong>1 cápsula a cada duas horas</strong>, ou conforme orientação de um profissional da saúde.<br/><br/></p>",
+            "content": "<p>Digite Modos de uso</p>",
             "page": ""
           }
         }

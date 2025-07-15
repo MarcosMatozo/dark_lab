@@ -23,7 +23,7 @@
             "heading_size": "h1",
             "description": "",
             "primary_button_label": "",
-            "primary_button_link": "",
+            "primary_button_link": "https://totvscuritiba-darklabsuplementos-dc.myshopify.com/collections/creatina",
             "primary_button_style": "primary",
             "secondary_button_label": "",
             "secondary_button_link": "",
@@ -38,8 +38,8 @@
         "slide_ww9zm3": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/BANNER_DESKTOP_CREATINA.png",
-            "mobile_image": "shopify://shop_images/BANNER_MOBILE_CREATINA.png",
+            "image": "shopify://shop_images/BANNER-DESKTOP_WHEY_1920x928_v2.png",
+            "mobile_image": "shopify://shop_images/BANNER-MOBILE_WHEY_767x1397_0635215d-5d7a-40c5-9254-e2ea6dbc5ae5.png",
             "image_overlay_opacity": 0,
             "subheading": "",
             "heading": "",
@@ -190,6 +190,7 @@
         "text_LNxRrD",
         "button_J7jEaz"
       ],
+      "disabled": true,
       "name": "t:sections.image-with-text.presets.name",
       "settings": {
         "section_color_scheme": "scheme-22eccc38-a022-405a-8f47-43de3838b02e",
@@ -252,6 +253,7 @@
       "blocks": {
         "slide_W9eizH": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Image-1-hover.png",
             "mobile_image": "shopify://shop_images/Image-1-hover.png",
@@ -298,13 +300,36 @@
         "padding_bottom": 12
       }
     },
-    "slideshow_BjJhkM": {
+    "slideshow_HTXDUP": {
       "type": "slideshow",
       "blocks": {
-        "slide_eaBVNQ": {
+        "slide_zd4HWJ": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Image-1-hover.png",
+            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_2.jpg",
+            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_jqFek8": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_2.jpg",
             "mobile_image": "shopify://shop_images/Image-1-hover.png",
             "image_overlay_opacity": 0,
             "subheading": "",
@@ -326,7 +351,136 @@
         }
       },
       "block_order": [
-        "slide_eaBVNQ"
+        "slide_zd4HWJ",
+        "slide_jqFek8"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "slideshow_9h8MFR": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_YefJ3R": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_1.jpg",
+            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_mfMyB7": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_1.jpg",
+            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_YefJ3R",
+        "slide_mfMyB7"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "expanded_width": false,
+        "slide_height": "original",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_animation": false,
+        "show_text_below": false
+      }
+    },
+    "slideshow_GGpB34": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_PHqgqN": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23.jpg",
+            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_DRpNhE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/WhatsApp_Image_2025-07-15_at_11.18.23_2.jpg",
+            "mobile_image": "shopify://shop_images/Image-1-hover.png",
+            "image_overlay_opacity": 0,
+            "subheading": "",
+            "heading": "",
+            "heading_size": "h1",
+            "description": "",
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "primary_button_style": "primary",
+            "secondary_button_label": "",
+            "secondary_button_link": "",
+            "secondary_button_style": "secondary",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "show_text_box": false,
+            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PHqgqN",
+        "slide_DRpNhE"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
@@ -346,8 +500,8 @@
           "settings": {
             "collection": "massa-muscular",
             "color_scheme": "scheme-3",
-            "image": "shopify://shop_images/ganho_de_massa_1_65f9e422-cb39-4d60-8242-f29c171fddf5.png",
-            "title": "&nbsp;",
+            "image": "shopify://shop_images/ganho_de_massa_vf.png",
+            "title": " ",
             "link": "shopify://collections/massa-muscular",
             "description": ""
           }
@@ -357,8 +511,8 @@
           "settings": {
             "collection": "creatina",
             "color_scheme": "scheme-3",
-            "image": "shopify://shop_images/alta_performance.png",
-            "title": "&nbsp;",
+            "image": "shopify://shop_images/alta_performance_vf.png",
+            "title": " ",
             "link": "shopify://collections/saude",
             "description": ""
           }
@@ -369,7 +523,7 @@
             "collection": "performance",
             "color_scheme": "scheme-3",
             "image": "shopify://shop_images/energia_e_emagrecimento_1_3ed44e5c-2b4a-4b63-8ecd-47a407e6f374.png",
-            "title": "&nbsp;",
+            "title": " ",
             "link": "shopify://collections/performance",
             "description": ""
           }
@@ -549,8 +703,26 @@
     },
     "instagram_feed_embed_9zpX4N": {
       "type": "instagram-feed-embed",
+      "disabled": true,
       "name": "Instagram Feed Embed",
       "settings": {}
+    },
+    "1752584182dd2fb6c7": {
+      "type": "apps",
+      "blocks": {
+        "gsc_instagram_feed_instafeed_LdU6zL": {
+          "type": "shopify://apps/gsc-instagram-feed/blocks/instafeed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
+          "settings": {
+            "widget_id": "GSC-CEXUoNyUHjNPQQM"
+          }
+        }
+      },
+      "block_order": [
+        "gsc_instagram_feed_instafeed_LdU6zL"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     },
     "newsletter": {
       "type": "newsletter",
@@ -606,12 +778,15 @@
     "slideshow_kcANhN",
     "slideshow_QTpDzA",
     "custom_liquid_aeyPVU",
-    "slideshow_BjJhkM",
+    "slideshow_HTXDUP",
+    "slideshow_9h8MFR",
+    "slideshow_GGpB34",
     "collection_list",
     "blog_darklab_custom",
     "logo_list_zKbmzw",
     "reviews_geJD4g",
     "instagram_feed_embed_9zpX4N",
+    "1752584182dd2fb6c7",
     "newsletter",
     "custom_liquid_U8t7zP"
   ]
