@@ -5,6 +5,8 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
+{{ 'dropdown-menu-additional.css' | asset_url | stylesheet_tag }}
+
 <nav class="header__inline-menu">
   <button class="menu-slide-arrow-left btn--slide" aria-label="navigation-slide-prev">{% render 'theme-icons', icon: 'icon-slide-left' %}</button>
   <ul class="list-menu list-menu--inline{% if menu_as_button == true %} button--style{% endif %}" role="list">
@@ -26,12 +28,18 @@
                   {% render 'theme-icons', icon: 'icon-chevron-down' %}
                 </span>
               </summary>
+              
               <ul
                 id="HeaderMenu-MenuList-{{ forloop.index }}"
                 class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup overflow-scrollbar"
                 role="list"
                 tabindex="-1"
               >
+                <li class="dropdown-menu__see-all">
+                  <a href="{{ link.url }}" class="link link--text focus-inset">
+                    Ver tudo de {{ link.title | escape }}
+                  </a>
+                </li>
                 {%- for childlink in link.links -%}
                   <li>
                     {%- if childlink.links == blank -%}

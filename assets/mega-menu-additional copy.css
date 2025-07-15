@@ -1,0 +1,13 @@
+.mega-menu__see-all {
+  margin-bottom: 2rem;
+  margin-top: -2rem;
+}
+
+.menu-drawer__inner-submenu .see-all-category {
+  padding: 1rem 0;
+  text-align: right;
+  margin: -20px 0 0;
+}
+.menu-drawer__inner-submenu .see-all-category svg {
+  margin-left: 1rem;
+}

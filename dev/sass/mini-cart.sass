@@ -1,4 +1,4 @@
-.cart-drawer__footer
+.cart-drawer__footer, #main-cart-footer .footer-js-contents
     ~ .docapp-promo-popup-container
         .docapp-promo-close, .docapp-promo-popup__header
                 display: none !important
@@ -66,6 +66,24 @@
                     .docapp-promo-offer-info, .docapp-promo-offer-progress
                         flex-basis: calc(100% - 90px)
                         padding-right: 2rem
+                        
+                    .docapp-promo-offer-re-choice-button-holder button
+                        border: none
+                        border-radius: 4px !important
+                        box-shadow: 0 1px 0 rgba(0,0,0,.08),inset 0 -1px 0 rgba(0,0,0,.2)
+                        color: #fff
+                        cursor: pointer
+                        display: block
+                        font-size: 12px
+                        height: auto
+                        line-height: normal
+                        margin-top: 1rem
+                        min-width: 20px
+                        padding: 8px 16px
+                        width: auto
+                        background-color: #007f5f !important
+
+
                     .docapp-promo-offer-info-image
                         flex-basis: 90px
                         img
@@ -74,4 +92,27 @@
             .docapp-promo-popup__more
                 margin-bottom: 1rem
             
-           
+
+
+.docapp-overlay-content.docapp-overlay-content__fullscreen
+    &:not(#force1), &:not(#force2)
+        background-color: #181616 !important
+        color: white !important
+        p, div, span
+            color: white !important
+        .docapp-gift-choice-modal-counter
+            background-color: #fff !important
+        .docapp-gift-choice-modal-counter, .docapp-gift-choice-modal-counter-selected
+            color: #000 !important
+        button.docapp-add-to-cart
+            background-color: #007f5f !important
+            width: fit-content
+        .docapp-gift-choice-modal-right-buttons
+            margin: auto
+            width: 100%
+            justify-content: space-between
+        button.docapp-gift-choice-modal-cart-button
+            background-color: #007f5f !important
+        button.docapp-gift-choice-modal-done-button
+            background-color: #fff !important
+            color: #000 !important

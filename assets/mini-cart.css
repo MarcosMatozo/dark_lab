@@ -1,69 +1,115 @@
 @charset "UTF-8";
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-close, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__header {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-close, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__header, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-close, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-popup__header {
   display: none !important;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__earned, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__more {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__earned, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__more, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-popup__earned, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-popup__more {
   display: none !important;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__earned::before, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__more::before {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__earned::before, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__more::before, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-popup__earned::before, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-popup__more::before {
   content: none !important;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offer-progress-percent, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__continue {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offer-progress-percent, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-popup__continue, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offer-progress-percent, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-popup__continue {
   display: none !important;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-info-text-main {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-info-text-main, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-info-text-main {
   margin-bottom: 1rem;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card {
   border: 2px solid #fff;
   border-radius: 1rem;
   padding: 1rem;
   margin-bottom: 1rem;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer-progress-bar-current {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer-progress-bar-current, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer-progress-bar-current {
   height: 6px;
   display: block;
   border-radius: 20px;
   margin: 0.5rem 0;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed {
   border-color: #e5f2ef !important;
   margin-bottom: 1rem;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed .docapp-promo-offer-progress-bar-current {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed .docapp-promo-offer-progress-bar-current, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed .docapp-promo-offer-progress-bar-current {
   background-color: #007f5f !important;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-progress {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-progress, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-progress {
   flex-basis: 100% !important;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-info-text-main {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-info-text-main, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-info-text-main {
   color: transparent;
   position: relative;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-info-text-main::after {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-info-text-main::after, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card.docapp-promo-offer-card--completed:not(:has(.docapp-promo-offer-info-image img)) .docapp-promo-offer-info-text-main::after {
   content: "Frete grátis";
   position: absolute;
   left: 0;
   top: 0;
   color: #fff;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card:not(.docapp-promo-offer-card--completed) .docapp-promo-offer-progress-bar-current {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card:not(.docapp-promo-offer-card--completed) .docapp-promo-offer-progress-bar-current, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card:not(.docapp-promo-offer-card--completed) .docapp-promo-offer-progress-bar-current {
   background-color: #f1e315 !important;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer {
   display: flex;
   flex-wrap: wrap;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-progress {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info, .cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-progress, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-progress {
   flex-basis: calc(100% - 90px);
   padding-right: 2rem;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info-image {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-re-choice-button-holder button, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-re-choice-button-holder button {
+  border: none;
+  border-radius: 4px !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 12px;
+  height: auto;
+  line-height: normal;
+  margin-top: 1rem;
+  min-width: 20px;
+  padding: 8px 16px;
+  width: auto;
+  background-color: #007f5f !important;
+}
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info-image, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info-image {
   flex-basis: 90px;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info-image img {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info-image img, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-offer-card .docapp-promo-offer .docapp-promo-offer-info-image img {
   max-width: 100%;
 }
-.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-popup__more {
+.cart-drawer__footer ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-popup__more, #main-cart-footer .footer-js-contents ~ .docapp-promo-popup-container .docapp-promo-offers .docapp-promo-popup__more {
   margin-bottom: 1rem;
+}
+
+.docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1), .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) {
+  background-color: #181616 !important;
+  color: white !important;
+}
+.docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) p, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) div, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) span, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) p, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) div, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) span {
+  color: white !important;
+}
+.docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) .docapp-gift-choice-modal-counter, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) .docapp-gift-choice-modal-counter {
+  background-color: #fff !important;
+}
+.docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) .docapp-gift-choice-modal-counter, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) .docapp-gift-choice-modal-counter-selected, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) .docapp-gift-choice-modal-counter, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) .docapp-gift-choice-modal-counter-selected {
+  color: #000 !important;
+}
+.docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) button.docapp-add-to-cart, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) button.docapp-add-to-cart {
+  background-color: #007f5f !important;
+  width: fit-content;
+}
+.docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) .docapp-gift-choice-modal-right-buttons, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) .docapp-gift-choice-modal-right-buttons {
+  margin: auto;
+  width: 100%;
+  justify-content: space-between;
+}
+.docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) button.docapp-gift-choice-modal-cart-button, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) button.docapp-gift-choice-modal-cart-button {
+  background-color: #007f5f !important;
+}
+.docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force1) button.docapp-gift-choice-modal-done-button, .docapp-overlay-content.docapp-overlay-content__fullscreen:not(#force2) button.docapp-gift-choice-modal-done-button {
+  background-color: #fff !important;
+  color: #000 !important;
 }
