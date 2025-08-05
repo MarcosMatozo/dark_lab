@@ -87,6 +87,7 @@
         "slide_ww9zm3",
         "slide_CEMLjr"
       ],
+      "disabled": true,
       "settings": {
         "expanded_width": true,
         "slide_height": "original",
@@ -110,6 +111,7 @@
       "block_order": [
         "featured_collection"
       ],
+      "disabled": true,
       "settings": {
         "title": "MAIS VENDIDOS",
         "heading_size": "h2",
@@ -176,6 +178,7 @@
         "icon_item_xM79HV",
         "icon_item_ayJK6m"
       ],
+      "disabled": true,
       "name": "Ícones Personalizados",
       "settings": {
         "title": "",
@@ -315,6 +318,7 @@
     },
     "custom_liquid_aeyPVU": {
       "type": "custom-liquid",
+      "disabled": true,
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
         "page_width": true,
@@ -322,46 +326,6 @@
         "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
         "padding_top": 12,
         "padding_bottom": 12
-      }
-    },
-    "slideshow_xdpfwC": {
-      "type": "slideshow",
-      "blocks": {
-        "slide_JH7Xyw": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/BANNER_VESTUARIO_DESKTOP.png",
-            "mobile_image": "shopify://shop_images/BANNER_VESTUARIO_MOBILE.png",
-            "image_overlay_opacity": 0,
-            "subheading": "",
-            "heading": "",
-            "heading_size": "h1",
-            "description": "",
-            "primary_button_label": "",
-            "primary_button_link": "https://darklabsuplementos.com.br/collections/vestuario",
-            "primary_button_style": "primary",
-            "secondary_button_label": "",
-            "secondary_button_link": "",
-            "secondary_button_style": "secondary",
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "show_text_box": false,
-            "color_scheme": "scheme-e301f268-641b-4e0c-9664-0e525bb362d0",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "slide_JH7Xyw"
-      ],
-      "name": "t:sections.slideshow.presets.name",
-      "settings": {
-        "expanded_width": false,
-        "slide_height": "original",
-        "auto_rotate": true,
-        "change_slides_speed": 5,
-        "image_animation": false,
-        "show_text_below": false
       }
     },
     "slideshow_HTXDUP": {
@@ -719,7 +683,6 @@
     "slideshow_kcANhN",
     "slideshow_QTpDzA",
     "custom_liquid_aeyPVU",
-    "slideshow_xdpfwC",
     "slideshow_HTXDUP",
     "slideshow_9h8MFR",
     "slideshow_GGpB34",
